@@ -4,7 +4,7 @@ DeptLocation::DeptLocation(/* args */)
 {
 }
 
-DeptLocation::DeptLocation(int id, int DNum, int DLoca)
+DeptLocation::DeptLocation(int id, int DNum, string DLoca)
 {
     DeptLocationID = id;
     DNumber = DNum;
@@ -17,7 +17,7 @@ DeptLocation::~DeptLocation()
 
 int DeptLocation::GetDeptLocationID()
 {
-    return DeptLocationID; // the value of dept location id
+    return DeptLocationID; // return the value of dept location id
 }
 
 void DeptLocation::SetDeptLocationID(int id)
@@ -27,26 +27,26 @@ void DeptLocation::SetDeptLocationID(int id)
 
 int DeptLocation::GetDeptLocationNumber()
 {
-    return DNumber; // the value of dept location id
+    return DNumber; // return the value of DeptLocationNumber
 }
 
 void DeptLocation::SetDeptLocationNumber(int DNum)
 {
-    DNumber = DNum; //assignment farameter for dept number
+    DNumber = DNum; //assignment farameter for DeptLocationNumber
 }
 
 string DeptLocation::GetDeptLocation()
 {
-    return DLocation; // the value of dept location id
+    return DLocation; // return the value of DLocation
 }
 
-void DeptLocation::SetDeptLocation(int DLoca)
+void DeptLocation::SetDeptLocation(string DLoca)
 {
-    DLocation = DLoca; // assignment farameter for dept location
+    DLocation = DLoca; // assignment farameter for DLocation
 }
 
 json DeptLocation::ToJson()
-{   
+{
     json j;
     // assignment values for keys
     j["DeptLocationID"] = DeptLocationID;
