@@ -4,12 +4,9 @@
 using namespace std;
 
 Department::Department(){};
-Department::Department(string dname, int dnumber, int mgrSSN, string mgrstartdate){
-    Dname = dname;
-    Dnumber = dnumber;
-    MgrSSN = mgrSSN;
-    Mgrstartdate = mgrstartdate;
-}
-void Department::Print_department(){
-    cout<<Dname<<" "<<Dnumber<<" "<<MgrSSN<<" "<<Mgrstartdate<< endl;
+Department::Department(string DName, int DNumber, long MgrSSN, string MgrStartDate){
+    this->DName = DName;
+    this->DNumber = DNumber;
+    this->MgrSSN = MgrSSN;
+    this->MgrStartDate = MgrStartDate;
 }
