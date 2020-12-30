@@ -4,7 +4,7 @@ Project::Project(/* args */)
 {
 }
 
-Project::Project(int id, int PNum, string PLoca, int Dnum);
+Project::Project(int id, int PNum, string PLoca, int Dnum)
 {
     ProjectID = id;
     PNumber = PNum;

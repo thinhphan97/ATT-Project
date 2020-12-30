@@ -20,4 +20,5 @@ g++ *.cpp */*.cpp -o main.bin
 g++ main.cpp businessobject/DeptLocations.cpp dataaccess/DeptLocationsDB.cpp ui/DeptLocationsUI.cpp -o main.exe
 
 
-g++ integratedtest/test_dept_location.cpp businessobject/DeptLocation.cpp -o main.exe    
+g++ integratedtest/test_dept_location.cpp businessobject/DeptLocation.cpp businessobject/Project.cpp -o main.exe
+   
