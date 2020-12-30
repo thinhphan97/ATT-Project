@@ -1,5 +1,5 @@
-#ifndef Project_businessobject_Project_h
-#define Project_businessobject_Project_h
+#ifndef _businessobject_Project_h
+#define _businessobject_Project_h
 
 #include <string>
 #include "../libs/json.hpp"
@@ -77,16 +77,14 @@ public:
      *  Function set the value for project location
      *  @return not return
      */
-    void SetProjectLocation(int DLoca);
-
-
+    void SetProjectLocation(string DLoca);
 
     /** @brief Function get the value of Department number
      *  
      *  Function get the value of Department number
      *  @return returns the value of Department number that data type is int
      */
-    string GetDNum();
+    int GetDNum();
 
     /** @brief Function set the value for Department number
      *  
@@ -94,8 +92,6 @@ public:
      *  @return not return
      */
     void SetDNum(int Dnum);
-
-
 
     /** @brief Function convert the project object to json
      *  
