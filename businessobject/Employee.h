@@ -1,7 +1,8 @@
 #ifndef Project_businessobject_Employee_h_
 #define Project_businessobject_Employee_h_
 #include <string>
-
+#include "../libs/json.hpp"
+using json = nlohmann::json;
 
 using namespace std;
 
@@ -20,7 +21,8 @@ class Employee{
         Employee(string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno);//the constructor take parameters of the object
         Employee(int id, string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno);//the constructor take parameters of the object
         void SetId(int Id);
-        Employee& operator= (Employee& e);
+        // Employee& operator= (Employee& e);
+        json ToJson();
 };
 
 #endif

@@ -11,6 +11,7 @@ EmployeeData::EmployeeData(){
 EmployeeData::EmployeeData(string file_name,Employee e){
     _MaxId = 0;
     _data.resize(0);
+    this->file_name = file_name;
     ifstream inFile(file_name);
     const int maxSize = 255;
     char buff[maxSize];
@@ -43,6 +44,12 @@ int EmployeeData::AddData(){
     
     _data.push_back(_DataAdd);
     cout<<"push finish"<< endl;
+    ofstream outFile(file_name, ios::out);
+    if(!outFile) return 0;
+    for (Employee e:_data){
+        outFile << e.ToJson() << endl;
+    }
+    outFile.close();
     return _MaxId;
 }
 

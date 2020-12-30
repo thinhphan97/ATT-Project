@@ -11,6 +11,7 @@ private:
     vector<Employee> _data;
     int _MaxId;
     Employee _DataAdd;
+    string file_name;
 public:
     EmployeeData();
     EmployeeData(string file_name, Employee e);
