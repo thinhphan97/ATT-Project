@@ -27,7 +27,7 @@ public:
      *  Function is constructor with parameters
      *  @return not return
      */
-    DeptLocation(int id, int DNum, int DLoca);
+    DeptLocation(int id, int DNum, string DLoca);
 
     /** @brief Function is default deconstructor
      *  
@@ -76,7 +76,7 @@ public:
      *  Function set the value for dept location
      *  @return not return
      */
-    void SetDeptLocation(int DLoca);
+    void SetDeptLocation(string DLoca);
 
     /** @brief Function convert the dept location object to json
      *  
