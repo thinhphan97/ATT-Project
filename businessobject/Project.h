@@ -3,11 +3,12 @@
 
 #include <string>
 #include "../libs/json.hpp"
+#include "BaseObject.h"
 
 using namespace std;
 using json = nlohmann::json;
 
-class Project
+class Project : public BaseObject
 {
 private:
     int ProjectID;    // Project ID
@@ -28,7 +29,10 @@ public:
      *  Function is constructor with parameters
      *  @return not return
      */
-    Project(int id, int PNum, string PLoca, int Dnum);
+
+
+    Project( int pNumber, string pLocation, int dNum);
+    Project(int projectID, int pNumber, string pLocation, int dNum);
 
     /** @brief Function is default deconstructor
      *  
@@ -49,7 +53,7 @@ public:
      *  Function set the value for project id
      *  @return not return
      */
-    void SetProjectID(int id);
+    void SetID(int projectID);
 
     /** @brief Function get the value of  project number
      *  
@@ -63,7 +67,7 @@ public:
      *  Function set the value for project number
      *  @return not return
      */
-    void SetProjectNumber(int DNum);
+    void SetProjectNumber(int pNumber);
 
     /** @brief Function get the value of project location
      *  
@@ -77,7 +81,7 @@ public:
      *  Function set the value for project location
      *  @return not return
      */
-    void SetProjectLocation(string DLoca);
+    void SetProjectLocation(string pLocation);
 
     /** @brief Function get the value of Department number
      *  
@@ -91,14 +95,13 @@ public:
      *  Function set the value for Department number
      *  @return not return
      */
-    void SetDNum(int Dnum);
+    void SetDNum(int dNum);
 
     /** @brief Function convert the project object to json
      *  
      *  Function convert the project object to json
      *  @return a json of project
      */
-    json ToJson();
+    string ToString();
 };
-
 #endif

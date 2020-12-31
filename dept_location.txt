@@ -1,0 +1,3 @@
+2
+{ DeptLocationID: 1; DNumber: 1; DLocation: danang }
+{ DeptLocationID: 2; DNumber: 2; DLocation: hatinh }

@@ -1,0 +1,3 @@
+2
+{ projectID: 1;PNumber: 1; PLocation: danang; DNumber:2 }
+{ projectID: 2;PNumber: 2; PLocation: ha tinh; DNumber:3 }

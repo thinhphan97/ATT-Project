@@ -4,11 +4,18 @@ DeptLocation::DeptLocation(/* args */)
 {
 }
 
-DeptLocation::DeptLocation(int id, int DNum, string DLoca)
+DeptLocation::DeptLocation(int dNumber, string dLocation)
 {
-    DeptLocationID = id;
-    DNumber = DNum;
-    DLocation = DLoca;
+
+    DNumber = dNumber;
+    DLocation = dLocation;
+}
+
+DeptLocation::DeptLocation(int deptLocationID, int dNumber, string dLocation)
+{
+    DeptLocationID = deptLocationID;
+    DNumber = dNumber;
+    DLocation = dLocation;
 }
 
 DeptLocation::~DeptLocation()
@@ -20,9 +27,9 @@ int DeptLocation::GetDeptLocationID()
     return DeptLocationID; // return the value of dept location id
 }
 
-void DeptLocation::SetDeptLocationID(int id)
+void DeptLocation::SetID(int deptLocationID)
 {
-    DeptLocationID = id; //assignment farameter for dept id
+    DeptLocationID = deptLocationID; //assignment farameter for dept id
 }
 
 int DeptLocation::GetDeptLocationNumber()
@@ -30,9 +37,9 @@ int DeptLocation::GetDeptLocationNumber()
     return DNumber; // return the value of DeptLocationNumber
 }
 
-void DeptLocation::SetDeptLocationNumber(int DNum)
+void DeptLocation::SetDeptLocationNumber(int dNumber)
 {
-    DNumber = DNum; //assignment farameter for DeptLocationNumber
+    DNumber = dNumber; //assignment farameter for DeptLocationNumber
 }
 
 string DeptLocation::GetDeptLocation()
@@ -40,17 +47,21 @@ string DeptLocation::GetDeptLocation()
     return DLocation; // return the value of DLocation
 }
 
-void DeptLocation::SetDeptLocation(string DLoca)
+void DeptLocation::SetDeptLocation(string dLocation)
 {
-    DLocation = DLoca; // assignment farameter for DLocation
+    DLocation = dLocation; // assignment farameter for DLocation
 }
 
-json DeptLocation::ToJson()
+// json DeptLocation::ToJson()
+// {
+//     json j;
+//     j["DeptLocationsID"] = DeptLocationID;
+//     j["DNumber"] = DNumber;
+//     j["DLocation"] = DLocation;
+//     return j;
+// }
+
+string DeptLocation::ToString()
 {
-    json j;
-    // assignment values for keys
-    j["DeptLocationID"] = DeptLocationID;
-    j["DNumber"] = DNumber;
-    j["DLocation"] = DLocation;
-    return j;
+    return "{ DeptLocationID: " + to_string(DeptLocationID) + "; DNumber: " + to_string(DNumber) +"; DLocation: " + DLocation +" }";
 }

@@ -3,11 +3,12 @@
 
 #include <string>
 #include "../libs/json.hpp"
+#include "BaseObject.h"
 
 using namespace std;
 using json = nlohmann::json;
 
-class DeptLocation
+class DeptLocation : public BaseObject
 {
 private:
     int DeptLocationID; // DeptLocation ID
@@ -22,12 +23,20 @@ public:
      */
     DeptLocation();
 
+
     /** @brief Function is constructor with parameters
      *  
      *  Function is constructor with parameters
      *  @return not return
      */
-    DeptLocation(int id, int DNum, string DLoca);
+    DeptLocation(int dNumber, string dLocation);
+
+    /** @brief Function is constructor with parameters
+     *  
+     *  Function is constructor with parameters
+     *  @return not return
+     */
+    DeptLocation(int deptLocationID, int dNumber, string dLocation);
 
     /** @brief Function is default deconstructor
      *  
@@ -48,7 +57,7 @@ public:
      *  Function set the value for dept location id
      *  @return not return
      */
-    void SetDeptLocationID(int id);
+    void SetID(int deptLocationID);
 
     /** @brief Function get the value of dept location number
      *  
@@ -62,7 +71,20 @@ public:
      *  Function set the value for dept location id
      *  @return not return
      */
-    void SetDeptLocationNumber(int DNum);
+    void SetDeptLocationNumber(int dNumber);
+
+    /** @brief Function get the value of dept location
+     *  
+     *  Function get the value of dept location
+     *  @return returns the value of dept location that data type is string
+    string GetDeptLocation();
+
+    /** @brief Function set the value for dept location
+     *  
+     *  Function set the value for dept location
+     *  @return not return
+     */
+    void SetDeptLocation(string dLocation);
 
     /** @brief Function get the value of dept location
      *  
@@ -71,19 +93,14 @@ public:
      */
     string GetDeptLocation();
 
-    /** @brief Function set the value for dept location
-     *  
-     *  Function set the value for dept location
-     *  @return not return
-     */
-    void SetDeptLocation(string DLoca);
-
     /** @brief Function convert the dept location object to json
      *  
      *  Function convert the dept location object to json
      *  @return a json of dept location
      */
-    json ToJson();
+    // json ToJson();
+    string ToString();
+
 };
 
 #endif

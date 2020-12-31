@@ -4,12 +4,19 @@ Project::Project(/* args */)
 {
 }
 
-Project::Project(int id, int PNum, string PLoca, int Dnum)
+Project::Project(int pNumber, string pLocation, int dNum)
 {
-    ProjectID = id;
-    PNumber = PNum;
-    PLocation = PLoca;
-    DNum = Dnum;
+    PNumber = pNumber;
+    PLocation = pLocation;
+    DNum = dNum;
+}
+
+Project::Project(int projectID, int pNumber, string pLocation, int dNum)
+{
+    ProjectID = projectID;
+    PNumber = pNumber;
+    PLocation = pLocation;
+    DNum = dNum;
 }
 
 Project::~Project()
@@ -21,9 +28,9 @@ int Project::GetProjectID()
     return ProjectID; // return the value of project id
 }
 
-void Project::SetProjectID(int id)
+void Project::SetID(int projectID)
 {
-    ProjectID = id; //assignment farameter for project id
+    ProjectID = projectID; //assignment farameter for project id
 }
 
 int Project::GetProjectNumber()
@@ -31,9 +38,9 @@ int Project::GetProjectNumber()
     return PNumber; // return the value of project number
 }
 
-void Project::SetProjectNumber(int PNum)
+void Project::SetProjectNumber(int pNumber)
 {
-    PNumber = PNum; //assignment farameter for project number
+    PNumber = pNumber; //assignment farameter for project number
 }
 
 string Project::GetProjectLocation()
@@ -41,9 +48,9 @@ string Project::GetProjectLocation()
     return PLocation; // return the value of PLocation
 }
 
-void Project::SetProjectLocation(string PLoca)
+void Project::SetProjectLocation(string pLocation)
 {
-    PLocation = PLoca; // assignment farameter for PLocation
+    PLocation = pLocation; // assignment farameter for PLocation
 }
 
 int Project::GetDNum()
@@ -51,18 +58,11 @@ int Project::GetDNum()
     return DNum; // return the value of DNum
 }
 
-void Project::SetDNum(int Dnum)
+void Project::SetDNum(int dNum)
 {
-    DNum = Dnum; //assignment farameter for DNum
+    DNum = dNum; //assignment farameter for DNum
 }
-
-json Project::ToJson()
+string Project::ToString()
 {
-    json j;
-    // assignment values for keys
-    j["ProjectID"] = ProjectID;
-    j["PNumber"] = PNumber;
-    j["PLocation"] = PLocation;
-    j["DNum"] = DNum;
-    return j;
+    return "{ projectID: " + to_string(ProjectID) + ";PNumber: " + to_string(PNumber) + "; PLocation: " + PLocation + "; DNumber:" + to_string(DNum) + " }";
 }

@@ -22,7 +22,7 @@ class Employee{
         Employee(int id, string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno);//the constructor take parameters of the object
         void SetId(int Id);
         // Employee& operator= (Employee& e);
-        json ToJson();
+         string ToString();
 };
 
 #endif
