@@ -63,5 +63,5 @@ void DeptLocation::SetDeptLocation(string dLocation)
 
 string DeptLocation::ToString()
 {
-    return "{ DeptLocationID: " + to_string(DeptLocationID) + "; DNumber: " + to_string(DNumber) +"; DLocation: " + DLocation +" }";
+    return to_string(DeptLocationID)+ to_string(DNumber) + DLocation;
 }

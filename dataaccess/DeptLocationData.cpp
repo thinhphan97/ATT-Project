@@ -13,23 +13,24 @@ DeptLocationData::DeptLocationData()
 
 int DeptLocationData::PullFile(string file_name)
 {
-    // _maxId = 0;
-    // _data.resize(0);
-    // ifstream inFile(file_name);
-    // const int maxSize = 255;
-    // char buff[maxSize];
-    // while (inFile.getline(buff, maxSize))
-    // {
-    //     json j = json::parse(buff);
+_maxId = 0;
+    _data.resize(0);
+    ifstream fileIn(file_name);
+    int numberDeptLocation;
+    fileIn >> numberDeptLocation;
+    int Id;
+    int DNumber; 
+    string DLocation;
+    for (int i =0; i<numberDeptLocation; i++){
+        fileIn >> Id;
+        fileIn >> DNumber;
+        fileIn >> DLocation;
 
-    //     DeptLocation d(
-    //         j["DeptLocationID"],
-    //         j["DNumber"],
-    //         j["DLocation"]);
-    //     _data.push_back(&d);
-    //     _maxId = j["DeptLocationID"];
-    // }
-    // inFile.close();
+        DeptLocation deptLocation(Id, DNumber, DLocation);
+        _data.push_back(&deptLocation);
+        cout << deptLocation.ToString();
+        _maxId = Id;
+    }
     return 1;
 }
 

@@ -38,4 +38,6 @@ int main()
     cout << data2->AddData(dtAccess3) << endl;
 
     cout << data2->AddData(dtAccess4);
+
+    data1->PullFile("dept_location.txt");
 }
