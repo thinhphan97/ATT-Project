@@ -56,7 +56,9 @@ void DeptLocationUI::Update()
     cout << "Enter DeptLocation number: ";
     cin >> deptLocation;
 
-    dataAccess->UpdateData(iD, deptLocationNumber, deptLocation);
+    DeptLocation *d = new DeptLocation(deptLocationNumber,deptLocation);
+
+    dataAccess->UpdateData(iD, d);
 
     dataAccess->ExportToFile("dept_location.txt");
 }

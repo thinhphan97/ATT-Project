@@ -1,78 +1,102 @@
 #include "ProjectData.h"
 #include <fstream>
-#include "../libs/json.hpp"
 #include <iostream>
 #include <string>
-using json = nlohmann::json;
 
 ProjectData::ProjectData()
 {
     _data.resize(0);
-     _maxId = 0;
+    _maxId = 0;
 }
 
-int ProjectData::PullFile(string file_name)
+ProjectData::ProjectData(string file_name)
 {
-    // _maxId = 0;
-    // _data.resize(0);
-    // ifstream inFile(file_name);
-    // const int maxSize = 255;
-    // char buff[maxSize];
-    // while (inFile.getline(buff, maxSize))
-    // {
-    //     json j = json::parse(buff);
+    _maxId = 0;
+    _data.resize(0);
 
-    //     DeptLocation d(
-    //         j["DeptLocationID"],
-    //         j["DNumber"],
-    //         j["DLocation"]);
-    //     _data.push_back(&d);
-    //     _maxId = j["DeptLocationID"];
-    // }
-    // inFile.close();
-    return 1;
-}
+    ifstream fileIn(file_name);
 
-int ProjectData::AddData(BaseObject *baseObject)
-{
-    _maxId++;
-    baseObject->SetID(_maxId);
+    int numberProject = 0;
+    fileIn >> numberProject;
+    int Id;
+    string PName;
+    int PNumber;
+    string PLocation;
+    int DNum;
 
-    _data.push_back(baseObject);
-
-    ExportToFile("project.txt");
-    return _maxId;
-}
-
-int ProjectData::ExportToFile(string file_name)
-{
-    ofstream fileOut(file_name);
-    fileOut << _data.size() << endl;
-    for (BaseObject *baseObject : _data)
+    for (int i = 0; i < numberProject; i++)
     {
-        fileOut << baseObject->ToString() << endl;
+        fileIn >> Id;
+        fileIn >> PName;
+        fileIn >> PNumber;
+        fileIn >> PLocation;
+        fileIn >> DNum;
+        // std::cin.ignore(32767, '\n');
+        // getline(fileIn, DLocation);
+
+        BaseObject *baseObject = new Project(Id, PName, PNumber, PLocation, DNum);
+
+        _data.push_back(baseObject);
+        _maxId = Id;
     }
-    fileOut.close();
-    return 1;
+
+    fileIn.close();
 }
 
-int ProjectData::DeleteData()
+// int DeptLocationData::AddData(BaseObject *baseObject)
+// {
+//     // _maxId++;
+//     // baseObject->SetID(_maxId);
+//     // _data.push_back(baseObject);
+//     // return _maxId;
+// }
+
+// int DeptLocationData::ExportToFile(string file_name)
+// {
+
+//     ofstream fileOut;
+//     fileOut.open(file_name, ios::out);
+//     fileOut << _data.size() << endl;
+//     for (BaseObject *b : _data)
+//     {
+//         fileOut << b->ToString() << endl;
+//     }
+//     fileOut.close();
+//     return 1;
+// }
+
+// int DeptLocationData::DeleteData(int ID)
+// {
+//     for (int i = 0; i < _data.size(); i++)
+//     {
+
+//         if ((_data.at(i)->GetID()) == ID)
+//         {
+//             _data.erase(_data.begin() + i);
+//         }
+//     }
+//     return 1;
+// }
+int ProjectData::UpdateData(int ID, BaseObject *baseObject)
 {
+    Project *project = (Project *)baseObject;
+    for (int i = 0; i < _data.size(); i++)
+    {
+
+        if ((_data.at(i)->GetID()) == ID)
+        {
+            Project *p = (Project *)_data.at(i);
+
+            p->SetProjectName(project->GetProjectName());
+            p->SetProjectNumber(project->GetProjectNumber());
+            p->SetProjectLocation(project->GetProjectLocation());
+            p->SetDNum(project->GetDNum());
+            return 1;
+        }
+    }
     return 0;
 }
-int ProjectData::UpdateData()
-{
-    return 0;
-}
-int ProjectData::SelectAllData()
-{
-    return 0;
-}
-int ProjectData::SelectData()
-{
-    return 0;
-}
-int ProjectData::GetMaxId()
-{
-    return _maxId;
-}
+// int DeptLocationData::GetMaxId()
+// {
+//     return _maxId;
+// }

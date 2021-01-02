@@ -4,15 +4,17 @@ Project::Project(/* args */)
 {
 }
 
-Project::Project(int pNumber, string pLocation, int dNum)
+Project::Project(string pName, int pNumber, string pLocation, int dNum)
 {
+    PName = pName;
     PNumber = pNumber;
     PLocation = pLocation;
     DNum = dNum;
 }
 
-Project::Project(int projectID, int pNumber, string pLocation, int dNum)
+Project::Project(int projectID, string pName, int pNumber, string pLocation, int dNum)
 {
+    PName = pName;
     ProjectID = projectID;
     PNumber = pNumber;
     PLocation = pLocation;
@@ -31,6 +33,16 @@ int Project::GetProjectID()
 void Project::SetID(int projectID)
 {
     ProjectID = projectID; //assignment farameter for project id
+}
+
+string Project::GetProjectName()
+{
+    return PName;
+}
+
+void Project::SetProjectName(string pName)
+{
+    PName = pName;
 }
 
 int Project::GetProjectNumber()
@@ -64,5 +76,5 @@ void Project::SetDNum(int dNum)
 }
 string Project::ToString()
 {
-    return "{ projectID: " + to_string(ProjectID) + ";PNumber: " + to_string(PNumber) + "; PLocation: " + PLocation + "; DNumber:" + to_string(DNum) + " }";
+    return to_string(ProjectID) + " " + PName + " " + to_string(PNumber) + " " + PLocation + " " + to_string(DNum);
 }

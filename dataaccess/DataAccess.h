@@ -16,8 +16,8 @@ public:
     virtual int ExportToFile(string file_name);
     virtual int AddData(BaseObject *baseObject);
     virtual int DeleteData(int ID);
-    virtual int UpdateData(int ID, int deptNumber, string deptLocation);
+    virtual int UpdateData(int ID, BaseObject *baseObject);
     virtual vector<BaseObject *> GetAllData();
-    virtual BaseObject* GetByID(int ID);
+    virtual BaseObject *GetByID(int ID);
 };
 #endif

@@ -40,7 +40,7 @@ int DataAccess::DeleteData(int ID)
     }
     return 1;
 }
-int DataAccess::UpdateData(int ID, int deptNumber, string deptLocation)
+int DataAccess::UpdateData(int ID, BaseObject *baseObject)
 {
     return 0;
 }
@@ -50,7 +50,7 @@ vector<BaseObject *> DataAccess::GetAllData()
     return _data;
 }
 
-BaseObject* DataAccess::GetByID(int ID)
+BaseObject *DataAccess::GetByID(int ID)
 {
     BaseObject *baseObject;
     for (int i = 0; i < _data.size(); i++)

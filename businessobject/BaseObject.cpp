@@ -12,6 +12,5 @@ int BaseObject::GetID()
 
 string BaseObject::ToString()
 {
-     cout << "==========================";
     return " ";
 }

@@ -9,7 +9,6 @@
 using namespace std;
 class DeptLocationData : public DataAccess
 {
-  //  DataAccess *dataAccess = new DeptLocationData("dept_location.txt");
 
 public:
   DeptLocationData();
@@ -17,7 +16,7 @@ public:
   // int ExportToFile(string filename) override;
   // int AddData(BaseObject *baseObject) override;
   // int DeleteData(int ID) override;
-  int UpdateData(int ID, int deptNumber, string deptLocation) override;
+  int UpdateData(int ID, BaseObject *baseObject) override;
   // int GetMaxId();
 };
 #endif

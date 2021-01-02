@@ -10,6 +10,7 @@ class Project : public BaseObject
 {
 private:
     int ProjectID;    // Project ID
+    string PName;
     int PNumber;      // Project Number
     string PLocation; // Project Location
     int DNum;         // Department Number
@@ -28,9 +29,8 @@ public:
      *  @return not return
      */
 
-
-    Project( int pNumber, string pLocation, int dNum);
-    Project(int projectID, int pNumber, string pLocation, int dNum);
+    Project(string pName, int pNumber, string pLocation, int dNum);
+    Project(int projectID, string pName, int pNumber, string pLocation, int dNum);
 
     /** @brief Function is default deconstructor
      *  
@@ -52,6 +52,28 @@ public:
      *  @return not return
      */
     void SetID(int projectID);
+
+
+
+     /** @brief Function get the value of  project number
+     *  
+     *  Function get the value of  project number
+     *  @return returns the value of  project number that data type is int
+     */
+    string GetProjectName();
+
+    /** @brief Function set the value for project number
+     *  
+     *  Function set the value for project number
+     *  @return not return
+     */
+    void SetProjectName(string pName);
+
+    /** @brief Function get the value of project location
+     *  
+     *  Function get the value of project location
+     *  @return returns the value of project location that data type is string
+     */
 
     /** @brief Function get the value of  project number
      *  

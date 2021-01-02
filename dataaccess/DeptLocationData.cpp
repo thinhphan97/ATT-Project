@@ -73,9 +73,9 @@ DeptLocationData::DeptLocationData(string file_name)
 //     }
 //     return 1;
 // }
-int DeptLocationData::UpdateData(int ID, int deptNumber, string deptLocation)
+int DeptLocationData::UpdateData(int ID, BaseObject *baseObject)
 {
-
+    DeptLocation *deptLocation = (DeptLocation *)baseObject;
     for (int i = 0; i < _data.size(); i++)
     {
 
@@ -83,8 +83,8 @@ int DeptLocationData::UpdateData(int ID, int deptNumber, string deptLocation)
         {
             DeptLocation *d = (DeptLocation *)_data.at(i);
 
-            d->SetDeptLocationNumber(deptNumber);
-            d->SetDeptLocation(deptLocation);
+            d->SetDeptLocationNumber(deptLocation->GetDeptLocationNumber());
+            d->SetDeptLocation(deptLocation->GetDeptLocation());
             return 1;
         }
     }

@@ -6,12 +6,13 @@
 #include "../businessobject/BaseObject.h"
 #include "../ui/DeptLocationUI.h"
 #include "../ui/BaseUI.h"
+#include "../ui/ProjectUI.h"
 
 using namespace std;
 
 int main()
 {
-    BaseUI *baseUI = new DeptLocationUI();
+    BaseUI *baseUI = new ProjectUI();
 
     baseUI->GetByID();
 
@@ -20,7 +21,7 @@ int main()
     // baseUI->Delete();
 
     // baseUI->Update();
-    //    baseUI -> GetAllData();
+    //   baseUI -> GetAllData();
 
 
     // DeptLocation d(1, "da nang");
