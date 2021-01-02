@@ -12,11 +12,14 @@ using namespace std;
 class DeptLocationUI : public BaseUI
 {
 
-   DataAccess *dataAccess = new DeptLocationData("dept_location.txt");
-public:
-   void Add() override;
-   void Delete() override;
+    DataAccess *dataAccess = new DeptLocationData("dept_location.txt");
 
+public:
+    void Add() override;
+    void Delete() override;
+    void Update() override;
+    void GetAllData() override;
+    void GetByID() override;
 };
 
 #endif

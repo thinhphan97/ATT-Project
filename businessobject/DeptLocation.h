@@ -22,7 +22,6 @@ public:
      */
     DeptLocation();
 
-
     /** @brief Function is constructor with parameters
      *  
      *  Function is constructor with parameters
@@ -99,7 +98,6 @@ public:
      */
     // json ToJson();
     string ToString() override;
-
 };
 
 #endif

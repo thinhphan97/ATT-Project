@@ -9,15 +9,15 @@
 using namespace std;
 class DeptLocationData : public DataAccess
 {
+  //  DataAccess *dataAccess = new DeptLocationData("dept_location.txt");
+
 public:
-    DeptLocationData();
-    DeptLocationData(string file_name);
-    int ExportToFile(string filename) override;
-    int AddData(BaseObject *baseObject) override;
-    int DeleteData(int ID) override;
-    int UpdateData(int ID) override;
-    int SelectAllData();
-    int SelectData();
-    int GetMaxId();
+  DeptLocationData();
+  DeptLocationData(string file_name);
+  // int ExportToFile(string filename) override;
+  // int AddData(BaseObject *baseObject) override;
+  // int DeleteData(int ID) override;
+  int UpdateData(int ID, int deptNumber, string deptLocation) override;
+  // int GetMaxId();
 };
 #endif

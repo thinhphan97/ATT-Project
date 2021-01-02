@@ -13,9 +13,15 @@ int main()
 {
     BaseUI *baseUI = new DeptLocationUI();
 
-     baseUI->Add();
+    baseUI->GetByID();
 
-    //baseUI->Delete();
+    //  baseUI->Add();
+
+    // baseUI->Delete();
+
+    // baseUI->Update();
+    //    baseUI -> GetAllData();
+
 
     // DeptLocation d(1, "da nang");
     // DeptLocation d1(3, "ha tinh");

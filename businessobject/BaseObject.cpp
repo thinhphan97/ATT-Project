@@ -1,16 +1,17 @@
 #include "BaseObject.h"
+#include <iostream>
 
-void BaseObject::SetID(int id){
-
+void BaseObject::SetID(int id)
+{
 }
 
-int BaseObject::GetID(){
-return 0;
+int BaseObject::GetID()
+{
+    return 0;
 }
 
-string BaseObject::ToString(){
+string BaseObject::ToString()
+{
+     cout << "==========================";
     return " ";
 }
-
-
-// }
