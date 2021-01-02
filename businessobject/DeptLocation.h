@@ -2,11 +2,10 @@
 #define Project_businessobject_DeptLocation_h
 
 #include <string>
-#include "../libs/json.hpp"
 #include "BaseObject.h"
+#include <iostream>
 
 using namespace std;
-using json = nlohmann::json;
 
 class DeptLocation : public BaseObject
 {
@@ -50,7 +49,7 @@ public:
      *  Function get the value of dept location id
      *  @return returns the value of dept location id that data type is int
      */
-    int GetDeptLocationID();
+    int GetID() override;
 
     /** @brief Function set the value for dept location id
      *  
@@ -99,7 +98,7 @@ public:
      *  @return a json of dept location
      */
     // json ToJson();
-    string ToString();
+    string ToString() override;
 
 };
 

@@ -4,40 +4,49 @@
 #include "../dataaccess/DeptLocationData.h"
 #include "../dataaccess/ProjectData.h"
 #include "../businessobject/BaseObject.h"
+#include "../ui/DeptLocationUI.h"
+#include "../ui/BaseUI.h"
 
 using namespace std;
 
 int main()
 {
-    DeptLocation d(1, "danang");
-    DeptLocation d1(2, "hatinh");
+    BaseUI *baseUI = new DeptLocationUI();
+
+     baseUI->Add();
+
+    //baseUI->Delete();
+
+    // DeptLocation d(1, "da nang");
+    // DeptLocation d1(3, "ha tinh");
     // DeptLocation d1(2, "hatinh");
-    BaseObject *dtAccess1 = new DeptLocation();
-    dtAccess1 = &d;
-    BaseObject *dtAccess2 = new DeptLocation();
-    dtAccess2 = &d1;
 
-    DataAccess *data1 = new DeptLocationData();
+    // BaseUI *baseUI = new DeptLocationUI();
+    // dtAccess1 = &d;
+    // BaseObject *dtAccess2 = new DeptLocation();
+    // dtAccess2 = &d1;
 
-    cout << data1->AddData(dtAccess1) << endl;
+    // DataAccess *data1 = new DeptLocationData();
 
-    cout << data1->AddData(dtAccess2);
+    // cout << data1->AddData(dtAccess1) << endl;
 
-    // data1->AddData(&d1);
+    // cout << data1->AddData(dtAccess2);
 
-    Project p(1, "danang", 2);
-    Project p1(2, "ha tinh", 3);
-    // DeptLocation d1(2, "hatinh");
-    BaseObject *dtAccess3 = new Project();
-    dtAccess3 = &p;
-    BaseObject *dtAccess4 = new Project();
-    dtAccess4 = &p1;
+    // // data1->AddData(&d1);
 
-    DataAccess *data2 = new ProjectData();
+    // Project p(1, "danang", 2);
+    // Project p1(2, "ha tinh", 3);
+    // // DeptLocation d1(2, "hatinh");
+    // BaseObject *dtAccess3 = new Project();
+    // dtAccess3 = &p;
+    // BaseObject *dtAccess4 = new Project();
+    // dtAccess4 = &p1;
 
-    cout << data2->AddData(dtAccess3) << endl;
+    // DataAccess *data2 = new ProjectData();
 
-    cout << data2->AddData(dtAccess4);
+    // cout << data2->AddData(dtAccess3) << endl;
 
-    data1->PullFile("dept_location.txt");
+    // cout << data2->AddData(dtAccess4);
+
+    // data1->PullFile("dept_location.txt");
 }

@@ -4,17 +4,18 @@
 #include <string>
 #include "DataAccess.h"
 #include "../businessobject/DeptLocation.h"
+#include "../businessobject/BaseObject.h"
 
 using namespace std;
 class DeptLocationData : public DataAccess
 {
 public:
     DeptLocationData();
-    int PullFile(string file_name);
-    int ExportToFile(string filename);
-    int AddData(BaseObject *baseObject);
-    int DeleteData();
-    int UpdateData();
+    DeptLocationData(string file_name);
+    int ExportToFile(string filename) override;
+    int AddData(BaseObject *baseObject) override;
+    int DeleteData(int ID) override;
+    int UpdateData(int ID) override;
     int SelectAllData();
     int SelectData();
     int GetMaxId();

@@ -12,8 +12,8 @@ class BaseObject
 
 public:
    virtual void SetID(int id);
+   virtual int GetID();
    virtual string ToString();
 };
-
 
 #endif

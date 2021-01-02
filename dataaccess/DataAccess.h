@@ -12,10 +12,10 @@ protected:
     int _maxId = 0;
 
 public:
-    virtual int PullFile(string file_name);
-    virtual int ExprotToFile(string file_name);
+    virtual int ExportToFile(string file_name);
     virtual int AddData(BaseObject *baseObject);
-    virtual int UpdateData() = 0;
+    virtual int DeleteData(int ID);
+    virtual int UpdateData(int ID);
     virtual int SelectAllData() = 0;
     virtual int SelectData() = 0;
 };

@@ -22,7 +22,7 @@ DeptLocation::~DeptLocation()
 {
 }
 
-int DeptLocation::GetDeptLocationID()
+int DeptLocation::GetID()
 {
     return DeptLocationID; // return the value of dept location id
 }
@@ -63,5 +63,5 @@ void DeptLocation::SetDeptLocation(string dLocation)
 
 string DeptLocation::ToString()
 {
-    return to_string(DeptLocationID)+ to_string(DNumber) + DLocation;
+    return to_string(DeptLocationID)+ " "+ to_string(DNumber) +" "+ DLocation;
 }

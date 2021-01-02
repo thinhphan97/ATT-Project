@@ -2,11 +2,9 @@
 #define _businessobject_Project_h
 
 #include <string>
-#include "../libs/json.hpp"
 #include "BaseObject.h"
 
 using namespace std;
-using json = nlohmann::json;
 
 class Project : public BaseObject
 {
