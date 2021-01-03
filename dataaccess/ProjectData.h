@@ -10,11 +10,7 @@ class ProjectData : public DataAccess
 {
 public:
     ProjectData();
-    ProjectData(string file_name);
-    // int ExportToFile(string filename) override;
-    // int AddData(BaseObject *baseObject) override;
-    // int DeleteData(int ID) override;
+    ProjectData(string file_name); 
     int UpdateData(int ID, BaseObject *baseObject) override;
-    // int GetMaxId();
 };
 #endif

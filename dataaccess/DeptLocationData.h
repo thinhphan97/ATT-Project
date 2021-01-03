@@ -13,10 +13,6 @@ class DeptLocationData : public DataAccess
 public:
   DeptLocationData();
   DeptLocationData(string file_name);
-  // int ExportToFile(string filename) override;
-  // int AddData(BaseObject *baseObject) override;
-  // int DeleteData(int ID) override;
   int UpdateData(int ID, BaseObject *baseObject) override;
-  // int GetMaxId();
 };
 #endif

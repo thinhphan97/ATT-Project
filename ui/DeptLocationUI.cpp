@@ -3,11 +3,11 @@
 void DeptLocationUI::Add()
 {
     char enter('y');
-    // do
-    // {
+
     int DeptLocationsID, DNumber;
     string DLocation;
-    cout << "Enter DeptLocation infor: ";
+    cout << "Add a DeptLocation: ";
+    cout << "Enter DeptLocation infor. please! ";
 
     cout << "Enter DeptLocation DNumber: ";
     cin >> DNumber;
@@ -25,10 +25,6 @@ void DeptLocationUI::Add()
 
     dataAccess->AddData(baseObject);
     dataAccess->ExportToFile("dept_location.txt");
-
-    // cout << "Continute ? (y/n) ";
-    // cin >> enter;
-    // } while (enter != 'n');
 }
 
 void DeptLocationUI::Delete()
@@ -43,8 +39,9 @@ void DeptLocationUI::Delete()
 
 void DeptLocationUI::Update()
 {
+    cout << "Update DeptLocation: ";
     int iD;
-    cout << "Enter DeptLocation id: ";
+    cout << "Enter DeptLocation id you want to edit: ";
     cin >> iD;
 
     cout << "Enter DeptLocation update infor: " << endl;
@@ -53,10 +50,10 @@ void DeptLocationUI::Update()
     cin >> deptLocationNumber;
 
     string deptLocation;
-    cout << "Enter DeptLocation number: ";
+    cout << "Enter DeptLocation: ";
     cin >> deptLocation;
 
-    DeptLocation *d = new DeptLocation(deptLocationNumber,deptLocation);
+    DeptLocation *d = new DeptLocation(deptLocationNumber, deptLocation);
 
     dataAccess->UpdateData(iD, d);
 

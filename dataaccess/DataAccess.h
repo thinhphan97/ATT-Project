@@ -21,9 +21,14 @@ public:
 
     /** @brief Function write data to file
      *  Function write data to file
-     *  @return 1 : success / 0 : failure
+     *  @return 1 if success
      */
     virtual int ExportToFile(string file_name);
+
+    /** @brief Function add a object to file
+     *  Function add a object to file
+     *  @return 1 if success 
+     */
     virtual int AddData(BaseObject *baseObject);
     virtual int DeleteData(int ID);
     virtual int UpdateData(int ID, BaseObject *baseObject);

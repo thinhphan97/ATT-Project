@@ -3,30 +3,28 @@
 
 void ProjectUI::Add()
 {
-    char enter('y');
-    // do
-    // {
+    cout << "Add a Project: ";
     int ID;
     string PName;
     int PNumber;
     string PLocation;
     int DNum;
-    cout << "Enter Project infor: ";
+    cout << "Please! Enter Project infor: ";
 
     cout << "Enter Project PName: ";
     cin >> PName;
     // std::cin.ignore(32767, '\n');
     // getline(cin, PName);
 
-    cout << "Enter Project DNumber: ";
+    cout << "Enter Project PNumber: ";
     cin >> PNumber;
 
-    cout << "Enter Project DNumber: ";
+    cout << "Enter Project PLocation: ";
     cin >> PLocation;
     // std::cin.ignore(32767, '\n');
     // getline(cin, PLocation);
 
-    cout << "Enter Project DNumber: ";
+    cout << "Enter Project DNum: ";
     cin >> DNum;
 
     Project project(PName, PNumber, PLocation, DNum);
@@ -36,20 +34,26 @@ void ProjectUI::Add()
 
     dataAccess->AddData(baseObject);
     dataAccess->ExportToFile("project_data.txt");
-
-    // cout << "Continute ? (y/n) ";
-    // cin >> enter;
-    // } while (enter != 'n');
 }
 
 void ProjectUI::Delete()
 {
+    cout << "Delete Project: ";
     int iD;
-    cout << "(delete)Enter Project id: ";
+    cout << "Please! Enter Project id: ";
     cin >> iD;
 
-    dataAccess->DeleteData(iD);
-    dataAccess->ExportToFile("project_data.txt");
+    cout << "do you want to delete " << iD;
+    cout << "y/n";
+
+    char c;
+    cin >> c;
+
+    if (c == 'y')
+    {
+        dataAccess->DeleteData(iD);
+        dataAccess->ExportToFile("project_data.txt");
+    }
 }
 
 void ProjectUI::Update()
