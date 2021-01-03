@@ -1,5 +1,5 @@
-#ifndef Project_dataaccess_DataAccess_h_
-#define Project_dataaccess_DataAccess_h_
+#ifndef Project_final_dataaccess_DataAccess_h_
+#define Project_final_dataaccess_DataAccess_h_
 
 #include "../businessobject/BaseObject.h"
 #include <string>
@@ -12,7 +12,17 @@ protected:
     int _maxId = 0;
 
 public:
+    /** @brief Function get maxID
+     *  
+     *  Function get maxID
+     *  @return max ID value
+     */
     int GetMaxId();
+
+    /** @brief Function write data to file
+     *  Function write data to file
+     *  @return 1 : success / 0 : failure
+     */
     virtual int ExportToFile(string file_name);
     virtual int AddData(BaseObject *baseObject);
     virtual int DeleteData(int ID);

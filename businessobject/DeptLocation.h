@@ -1,5 +1,5 @@
-#ifndef Project_businessobject_DeptLocation_h
-#define Project_businessobject_DeptLocation_h
+#ifndef _project_final_businessobject_DeptLocation_h
+#define _project_final_businessobject_DeptLocation_h
 
 #include <string>
 #include "BaseObject.h"
@@ -22,14 +22,14 @@ public:
      */
     DeptLocation();
 
-    /** @brief Function is constructor with parameters
+    /** @brief Function is constructor with 2 parameters
      *  
      *  Function is constructor with parameters
      *  @return not return
      */
     DeptLocation(int dNumber, string dLocation);
 
-    /** @brief Function is constructor with parameters
+    /** @brief Function is constructor with 3 parameters
      *  
      *  Function is constructor with parameters
      *  @return not return
@@ -91,12 +91,12 @@ public:
      */
     string GetDeptLocation();
 
-    /** @brief Function convert the dept location object to json
+    /** @brief Function convert the dept location object to string
      *  
      *  Function convert the dept location object to json
-     *  @return a json of dept location
+     *  @return a string of dept location
      */
-    // json ToJson();
+
     string ToString() override;
 };
 

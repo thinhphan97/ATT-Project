@@ -12,17 +12,17 @@ using namespace std;
 
 int main()
 {
-    BaseUI *baseUI = new ProjectUI();
+     BaseUI *baseUI = new ProjectUI();
+     //BaseUI *baseUI = new DeptLocationUI();
 
     baseUI->GetByID();
 
-    //  baseUI->Add();
+     // baseUI->Add();
 
-    // baseUI->Delete();
+    //baseUI->Delete();
 
-    // baseUI->Update();
+     //baseUI->Update();
     //   baseUI -> GetAllData();
-
 
     // DeptLocation d(1, "da nang");
     // DeptLocation d1(3, "ha tinh");

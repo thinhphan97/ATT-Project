@@ -25,7 +25,7 @@ Project::~Project()
 {
 }
 
-int Project::GetProjectID()
+int Project::GetID()
 {
     return ProjectID; // return the value of project id
 }

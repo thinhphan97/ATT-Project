@@ -52,16 +52,8 @@ void DeptLocation::SetDeptLocation(string dLocation)
     DLocation = dLocation; // assignment farameter for DLocation
 }
 
-// json DeptLocation::ToJson()
-// {
-//     json j;
-//     j["DeptLocationsID"] = DeptLocationID;
-//     j["DNumber"] = DNumber;
-//     j["DLocation"] = DLocation;
-//     return j;
-// }
 
 string DeptLocation::ToString()
 {
-    return to_string(DeptLocationID) + " " + to_string(DNumber) + " " + DLocation;
+    return to_string(DeptLocationID) + " " + to_string(DNumber) + " " + DLocation; 
 }

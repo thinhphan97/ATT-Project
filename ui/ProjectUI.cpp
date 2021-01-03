@@ -14,16 +14,17 @@ void ProjectUI::Add()
     cout << "Enter Project infor: ";
 
     cout << "Enter Project PName: ";
-
-    std::cin.ignore(32767, '\n');
-    getline(cin, PName);
+    cin >> PName;
+    // std::cin.ignore(32767, '\n');
+    // getline(cin, PName);
 
     cout << "Enter Project DNumber: ";
     cin >> PNumber;
 
     cout << "Enter Project DNumber: ";
-    std::cin.ignore(32767, '\n');
-    getline(cin, PLocation);
+    cin >> PLocation;
+    // std::cin.ignore(32767, '\n');
+    // getline(cin, PLocation);
 
     cout << "Enter Project DNumber: ";
     cin >> DNum;
@@ -58,24 +59,31 @@ void ProjectUI::Update()
     int PNumber;
     string PLocation;
     int DNum;
+
+    cout << "Enter Project ID for update: ";
+    cin >> ID;
+
     cout << "Enter Project infor: ";
 
     cout << "Enter Project PName: ";
 
-    std::cin.ignore(32767, '\n');
-    getline(cin, PName);
+    cin >> PName;
+    // std::cin.ignore(32767, '\n');
+    // getline(cin, PName);
 
-    cout << "Enter Project DNumber: ";
+    cout << "Enter Project PNumber: ";
     cin >> PNumber;
 
-    cout << "Enter Project DNumber: ";
-    std::cin.ignore(32767, '\n');
-    getline(cin, PLocation);
+    cout << "Enter Project PLocation: ";
+    cin >> PLocation;
+    // std::cin.ignore(32767, '\n');
+    // getline(cin, PLocation);
 
     cout << "Enter Project DNumber: ";
     cin >> DNum;
 
-    Project *p = new Project(PName, PNumber, PLocation, DNum);;
+    Project *p = new Project(PName, PNumber, PLocation, DNum);
+    ;
 
     dataAccess->UpdateData(ID, p);
 

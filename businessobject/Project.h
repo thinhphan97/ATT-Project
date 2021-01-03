@@ -1,5 +1,5 @@
-#ifndef _businessobject_Project_h
-#define _businessobject_Project_h
+#ifndef _project_final_businessobject_Project_h
+#define _project_final_businessobject_Project_h
 
 #include <string>
 #include "BaseObject.h"
@@ -9,7 +9,7 @@ using namespace std;
 class Project : public BaseObject
 {
 private:
-    int ProjectID;    // Project ID
+    int ProjectID; // Project ID
     string PName;
     int PNumber;      // Project Number
     string PLocation; // Project Location
@@ -23,17 +23,22 @@ public:
      */
     Project();
 
-    /** @brief Function is constructor with parameters
+    /** @brief Function is constructor with 2 parameters
      *  
      *  Function is constructor with parameters
      *  @return not return
      */
 
     Project(string pName, int pNumber, string pLocation, int dNum);
+
+    /** @brief Function is constructor with 3 parameters
+     *  
+     *  Function is constructor with parameters
+     *  @return not return
+     */
     Project(int projectID, string pName, int pNumber, string pLocation, int dNum);
 
     /** @brief Function is default deconstructor
-     *  
      *  Function is default deconstructor
      *  @return not return
      */
@@ -44,7 +49,7 @@ public:
      *  Function get the value of project id
      *  @return returns the value of project id that data type is int
      */
-    int GetProjectID();
+    int GetID();
 
     /** @brief Function set the value for project id
      *  
@@ -53,27 +58,19 @@ public:
      */
     void SetID(int projectID);
 
-
-
-     /** @brief Function get the value of  project number
+    /** @brief Function get the value of  project name
      *  
      *  Function get the value of  project number
      *  @return returns the value of  project number that data type is int
      */
     string GetProjectName();
 
-    /** @brief Function set the value for project number
+    /** @brief Function set the value for project name
      *  
      *  Function set the value for project number
      *  @return not return
      */
     void SetProjectName(string pName);
-
-    /** @brief Function get the value of project location
-     *  
-     *  Function get the value of project location
-     *  @return returns the value of project location that data type is string
-     */
 
     /** @brief Function get the value of  project number
      *  
@@ -117,9 +114,8 @@ public:
      */
     void SetDNum(int dNum);
 
-    /** @brief Function convert the project object to json
-     *  
-     *  Function convert the project object to json
+    /** @brief Function convert the project object to string
+     *  Function convert the project object to string
      *  @return a json of project
      */
     string ToString();

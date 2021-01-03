@@ -1,5 +1,4 @@
 #include "BaseObject.h"
-#include <iostream>
 
 void BaseObject::SetID(int id)
 {
