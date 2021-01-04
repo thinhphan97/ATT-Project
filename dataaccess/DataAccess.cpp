@@ -40,10 +40,10 @@ int DataAccess::DeleteData(int ID)
     }
     return 1;
 }
-int DataAccess::UpdateData(int ID, BaseObject *baseObject)
-{
-    return 0;
-}
+// int DataAccess::UpdateData(int ID, BaseObject *baseObject)
+// {
+//     return 0;
+// }
 
 vector<BaseObject *> DataAccess::GetAllData()
 {

@@ -24,3 +24,5 @@ g++ integratedtest/test_dept_location.cpp businessobject/DeptLocation.cpp dataac
    g++ integratedtest/test_dept_location.cpp businessobject/Project.cpp dataaccess/ProjectData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/ProjectUI.cpp  -o main.exe
 
 g++ integratedtest/test_dept_location.cpp businessobject/WorkOn.cpp dataaccess/WorkOnData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/WorkOnUI.cpp  -o main.exe
+
+g++ integratedtest/test_dept_location.cpp businessobject/Dependent.cpp dataaccess/DependentData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DependentUI.cpp  -o main.exe

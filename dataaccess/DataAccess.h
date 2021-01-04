@@ -31,7 +31,7 @@ public:
      */
     virtual int AddData(BaseObject *baseObject);
     virtual int DeleteData(int ID);
-    virtual int UpdateData(int ID, BaseObject *baseObject);
+    virtual int UpdateData(int ID, BaseObject *baseObject) = 0;
     virtual vector<BaseObject *> GetAllData();
     virtual BaseObject *GetByID(int ID);
 };
