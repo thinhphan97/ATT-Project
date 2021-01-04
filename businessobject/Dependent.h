@@ -1,5 +1,5 @@
-#ifndef _project_final_businessobject_Dependent_h
-#define _project_final_businessobject_Dependent_h
+#ifndef _dependent_final_businessobject_Dependent_h
+#define _dependent_final_businessobject_Dependent_h
 
 #include <string>
 #include "BaseObject.h"
@@ -24,7 +24,7 @@ public:
      */
     Dependent();
 
-    /** @brief Function is constructor with 2 parameters
+    /** @brief Function is constructor with 5 parameters
      *  
      *  Function is constructor with parameters
      *  @return not return
@@ -32,7 +32,7 @@ public:
 
     Dependent(long essn, string dependentName, char sex, string bDay, string relationship);
 
-    /** @brief Function is constructor with 3 parameters
+    /** @brief Function is constructor with 6 parameters
      *  
      *  Function is constructor with parameters
      *  @return not return
@@ -45,93 +45,94 @@ public:
      */
     ~Dependent();
 
-    /** @brief Function get the value of project id
+    /** @brief Function get the value of dependent id
      *  
-     *  Function get the value of project id
-     *  @return returns the value of project id that data type is int
+     *  Function get the value of dependent id
+     *  @return returns the value of dependent id that data type is int
      */
     int GetID();
 
-    /** @brief Function set the value for project id
+    /** @brief Function set the value for dependent id
      *  
-     *  Function set the value for project id
+     *  Function set the value for dependent id
      *  @return not return
      */
     void SetID(int dependentID);
 
     /** @brief Function get the value of ESSN
      *  
-     *  Function get the value of  project number
-     *  @return returns the value of  project number that data type is int
+     *  Function get the value of  dependent number
+     *  @return returns the value of  dependent number that data type is int
      */
     long GetESSN();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for dependent name
      *  
-     *  Function set the value for project number
+     *  Function set the value for dependent number
      *  @return not return
      */
     void SetESSN(long essn);
 
     /** @brief Function get the value of ESSN
      *  
-     *  Function get the value of  project number
-     *  @return returns the value of  project number that data type is int
+     *  Function get the value of  dependent number
+     *  @return returns the value of  dependent number that data type is int
      */
     string GetDependentName();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for dependent name
      *  
-     *  Function set the value for project number
+     *  Function set the value for dependent number
      *  @return not return
      */
     void SetDependentName(string DependentName);
 
-    /** @brief Function get the value of ESSN
+    /** @brief Function get the value of depedent sex
      *  
-     *  Function get the value of  project number
-     *  @return returns the value of  project number that data type is int
+     *  Function get the value of depedent sex
+     *  @return returns the value of  dependent number that data type is int
      */
     char GetSex();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for depedent sex
      *  
-     *  Function set the value for project number
-     *  @return not return
+     *  Function set the value for depedent sex
+     *  @return 
      */
     void SetSex(char sex);
 
-    /** @brief Function get the value of ESSN
+    /** @brief Function get the value of dependent birthdate
      *  
-     *  Function get the value of  project number
-     *  @return returns the value of  project number that data type is int
+     *  Function get the value of dependent birthdate
+     *  @return not return
      */
+
     string GetBDate();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for dependent nabirthdateme
      *  
-     *  Function set the value for project number
+     *  Function set the value for dependent birthdate
      *  @return not return
      */
     void SetBDate(string bDate);
 
-    /** @brief Function get the value of ESSN
+    /** @brief Function get the relationship
      *  
-     *  Function get the value of  project number
-     *  @return returns the value of  project number that data type is int
+     *  Function get the value of  dependent relationship
+     *  @return a string value of dependent relationship
      */
     string GetRelationship();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for dependent relationship
      *  
-     *  Function set the value for project number
+     *  Function set the value for dependent relationship
      *  @return not return
      */
     void SetRelationship(string relationship);
 
-    /** @brief Function convert the project object to string
-     *  Function convert the project object to string
-     *  @return a json of project
+    /** @brief Function convert the dependent object to string
+     *  Function convert the dependent object to string
+     *  @return a string of dependent
      */
     string ToString();
 };

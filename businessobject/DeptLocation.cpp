@@ -1,6 +1,6 @@
 #include "DeptLocation.h"
 
-DeptLocation::DeptLocation(/* args */)
+DeptLocation::DeptLocation()
 {
 }
 
@@ -55,5 +55,5 @@ void DeptLocation::SetDeptLocation(string dLocation)
 
 string DeptLocation::ToString()
 {
-    return to_string(DeptLocationID) + " " + to_string(DNumber) + " " + DLocation; 
+    return to_string(DeptLocationID) + " " + to_string(DNumber) + " " + DLocation; // return a string of object
 }
