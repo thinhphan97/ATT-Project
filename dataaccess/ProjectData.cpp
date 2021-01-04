@@ -31,8 +31,6 @@ ProjectData::ProjectData(string file_name)
         fileIn >> PNumber;
         fileIn >> PLocation;
         fileIn >> DNum;
-        // std::cin.ignore(32767, '\n');
-        // getline(fileIn, DLocation);
 
         BaseObject *baseObject = new Project(Id, PName, PNumber, PLocation, DNum);
 

@@ -2,11 +2,12 @@
 #define Project_businessobject_Employee_h_
 #include <string>
 #include "BaseObject.h"
+#include "../libs/json.hpp"
+using json = nlohmann::json;
 
 using namespace std;
 
-class Employee:public BaseObject
-{
+class Employee:public BaseObject{
     private:
         int Id;//id is increasing number
         string FName, MInit, LName; //fname, minit, lname are the full name of employee
@@ -20,29 +21,13 @@ class Employee:public BaseObject
         Employee();//The constructor takes no parameters of class
         Employee(string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno);//the constructor take parameters of the object
         Employee(int id, string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno);//the constructor take parameters of the object
-        int GetID();
-        void SetID(int);
-        string GetFName();
-        void SetFName(string);
-        string GetMInit();
-        void SetMInit(string);
-        string GetLName();
-        void SetLName(string);
+        void SetId(int Id);
+        int GetId();
+        void SetSubId();
         long GetSSN();
-        void SetSSN(long);
-        string GetBDate();
-        void SetBDate(string);
-        string GetAdress();
-        void SetAdress(string);
-        char GetSex();
-        void SetSex(char);
-        int GetSalary();
-        void SetSalary(int);
-        long GetSuperSSN();
-        void SetSuperSSN(long);
-        int GetDNO();
-        void SetDNO(int);
-        string ToString();
+        string ConvertToString();
+        json ToJson();
+        
 };
 
 #endif
