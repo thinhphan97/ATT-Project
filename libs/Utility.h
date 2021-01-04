@@ -4,6 +4,6 @@
 using namespace std;
 class Utility{
 public:
-    static string replaceAll(string s);
+    static string replaceAll(string s, const string &search, const string &replace);
 };
 #endif

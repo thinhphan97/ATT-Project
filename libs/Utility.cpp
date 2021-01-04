@@ -10,3 +10,4 @@ string Utility::replaceAll(string s, const string &search, const string &replace
         s.insert( pos, replace );
     }
     return s;
+};

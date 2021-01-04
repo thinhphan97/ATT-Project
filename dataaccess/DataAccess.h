@@ -10,6 +10,7 @@ class DataAccess
 protected:
     vector<BaseObject *> _data;
     int _maxId = 0;
+    string file_name;
 
 public:
     /** @brief Function get maxID

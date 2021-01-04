@@ -1,70 +1,79 @@
 #include "EmployeeData.h"
+#include <string>
 #include <fstream>
-#include "../libs/json.hpp"
 #include <iostream>
-using json = nlohmann::json;
+using namespace std;
+
+
 
 EmployeeData::EmployeeData(){
-    _MaxId = 0;
     _data.resize(0);
-};
-EmployeeData::EmployeeData(string file_name,Employee e){
-    _MaxId = 0;
+    _maxId = 0;
+}
+EmployeeData::EmployeeData(string file_name){
+    _maxId = 0;
     _data.resize(0);
     this->file_name = file_name;
-    ifstream inFile(file_name);
-    const int maxSize = 255;
-    char buff[maxSize];
-    while (inFile.getline(buff,maxSize)){
-        json j = json::parse(buff);
+}
+void EmployeeData::ReadData(){
 
-        Employee p(
-            j["Id"],
-            j["Fname"],
-            j["Minit"],
-            j["Lname"],
-            j["SSN"],
-            j["Bdate"],
-            j["Adress"],
-            ((string)j["Sex"])[0],
-            j["Salary"],
-            j["SuperSSN"],
-            j["DNO"] 
-            );
-        p.SetId(j["Id"]);
-        _data.push_back(p);
-        _MaxId= j["Id"];
+    ifstream fileIn(file_name);
+    int numberProject = 0;
+    fileIn >> numberProject;
+    int Id;
+    string FName, MInit, LName; 
+    long SSN;
+    string BDate, Adress; 
+    char Sex;
+    int Salary;
+    long SuperSSN;
+    int DNO;
+
+    for (int i = 0; i < numberProject; i++)
+    {
+        fileIn >> Id;
+        fileIn >> FName;
+        fileIn >> MInit;
+        fileIn >> LName;
+        fileIn >> SSN;
+        fileIn >> BDate;
+        fileIn >> Adress;
+        fileIn >> Sex;
+        fileIn >> Salary;
+        fileIn >> SuperSSN;
+        fileIn >> DNO;
+ 
+
+        BaseObject *baseObject = new Employee(Id, FName, MInit, LName, SSN, BDate, Adress, Sex, Salary, SuperSSN, DNO);
+
+        _data.push_back(baseObject);
+        _maxId = Id;
     }
-    inFile.close();
-    e.SetId(++_MaxId);
-    _DataAdd = e;  
-};
+    fileIn.close();
+}
 
-int EmployeeData::AddData(){
-    
-    _data.push_back(_DataAdd);
-    cout<<"push finish"<< endl;
-    ofstream outFile(file_name, ios::out);
-    if(!outFile) return 0;
-    for (Employee e:_data){
-        outFile << e.ToJson() << endl;
+int EmployeeData::UpdateData(int ID, BaseObject *baseObject){
+    Employee* employee = (Employee*) baseObject;
+    for (int i = 0; i < _data.size(); i++)
+    {
+
+        if ((_data.at(i)->GetID()) == ID)
+        {
+            Employee* p = (Employee*)_data.at(i);
+
+            p->SetFName(employee->GetFName());
+            p->SetMInit(employee->GetMInit());
+            p->SetLName(employee->GetLName());
+            p->SetSSN(employee->GetSSN());
+            p->SetBDate(employee->GetBDate());
+            p->SetAdress(employee->GetAdress());
+            p->SetSex(employee->GetSex());
+            p->SetSalary(employee->GetSalary());
+            p->SetSuperSSN(employee->GetSuperSSN());
+            p->SetDNO(employee->GetDNO());
+
+            return 1;
+        }
     }
-    outFile.close();
-    return _MaxId;
-}
-
-int EmployeeData::DeleteData(){
     return 0;
-}
-int EmployeeData::UpdateData(){
-    return 0;
-}
-int EmployeeData::SelectAllData(){
-    return 0;
-}
-int EmployeeData::SelectData(){
-    return 0;
-}
-int EmployeeData::GetMaxId(){
-    return _MaxId;
 }
