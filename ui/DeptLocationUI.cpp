@@ -2,7 +2,6 @@
 
 void DeptLocationUI::Add()
 {
-    char enter('y');
 
     int DeptLocationsID, DNumber;
     string DLocation;
@@ -13,17 +12,24 @@ void DeptLocationUI::Add()
     cin >> DNumber;
 
     cout << "Enter DeptLocation DLocation: ";
+    cin >> DLocation;
 
     //   Xóa khỏi bộ nhớ đệm 32767 ký tự, hoặc đến khi gặp ký tự '\n'
-    std::cin.ignore(32767, '\n');
-    getline(cin, DLocation);
+    // std::cin.ignore(32767, '\n');
+    // getline(cin, DLocation);
 
+    // create a deptLocation
     DeptLocation deptLocation(DNumber, DLocation);
-
+    // create a baseObject
     BaseObject *baseObject = new DeptLocation();
+
+    //assigned baseObject by deptLocation pointor
     baseObject = &deptLocation;
 
+    // add a baseobject to vector
     dataAccess->AddData(baseObject);
+
+    // write to file
     dataAccess->ExportToFile("dept_location.txt");
 }
 
@@ -33,7 +39,9 @@ void DeptLocationUI::Delete()
     cout << "Enter DeptLocation id: ";
     cin >> iD;
 
+    // delete a baseobject to vector
     dataAccess->DeleteData(iD);
+    // write to file
     dataAccess->ExportToFile("dept_location.txt");
 }
 

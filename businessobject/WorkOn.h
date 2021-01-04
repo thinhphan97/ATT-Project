@@ -10,9 +10,9 @@ class WorkOn : public BaseObject
 {
 private:
     int WorkOnID; // WorkOn ID
-    long ESSN;    //
-    int PNO;      // WorkOn Number
-    float Hours;  // WorkOn Hours
+    long ESSN;    // Employee code
+    int PNO;      // project Number
+    float Hours;  // Hours for project
 
 public:
     /** @brief Function is default constructor
@@ -57,44 +57,44 @@ public:
      */
     void SetID(int projectID);
 
-    /** @brief Function get the value of ESSN
+    /** @brief Function get the value of 
      *  
-     *  Function get the value of  project number
+     *  Function get the value of ESSN
      *  @return returns the value of  project number that data type is int
      */
     long GetESSN();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for ESSN
      *  
-     *  Function set the value for project number
+     *  Function set the value for ESSN
      *  @return not return
      */
     void SetESSN(long essn);
 
-    /** @brief Function get the value of ESSN
+    /** @brief Function get the value of Project Number
      *  
-     *  Function get the value of  project number
+     *  Function get the value of Project Number
      *  @return returns the value of  project number that data type is int
      */
     int GetPNO();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for Project Number
      *  
      *  Function set the value for project number
      *  @return not return
      */
     void SetPNO(int pno);
 
-    /** @brief Function get the value of ESSN
+    /** @brief Function set the value for project time
      *  
-     *  Function get the value of  project number
+     * Function set the value for project time
      *  @return returns the value of  project number that data type is int
      */
     float GetHours();
 
-    /** @brief Function set the value for project name
+    /** @brief Function set the value for project time
      *  
-     *  Function set the value for project number
+     * Function set the value for project time
      *  @return not return
      */
     void SetHours(float hours);

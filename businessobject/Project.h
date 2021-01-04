@@ -9,11 +9,11 @@ using namespace std;
 class Project : public BaseObject
 {
 private:
-    int ProjectID; // Project ID
-    string PName;
-    int PNumber;      // Project Number
-    string PLocation; // Project Location
-    int DNum;         // Department Number
+    int ProjectID;      // Project ID
+    string PName;       // Project name
+    int PNumber;        // Project number
+    string PLocation;   // Project location
+    int DNum;           // Department Number
 
 public:
     /** @brief Function is default constructor
@@ -23,17 +23,17 @@ public:
      */
     Project();
 
-    /** @brief Function is constructor with 2 parameters
+    /** @brief Function is constructor with 4 parameters
      *  
-     *  Function is constructor with parameters
+     *  Function is constructor with 4 parameters
      *  @return not return
      */
 
     Project(string pName, int pNumber, string pLocation, int dNum);
 
-    /** @brief Function is constructor with 3 parameters
+    /** @brief Function is constructor with 5 parameters
      *  
-     *  Function is constructor with parameters
+     *  Function is constructor with 5 parameters
      *  @return not return
      */
     Project(int projectID, string pName, int pNumber, string pLocation, int dNum);

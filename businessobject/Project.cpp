@@ -76,5 +76,6 @@ void Project::SetDNum(int dNum)
 }
 string Project::ToString()
 {
-    return to_string(ProjectID) + " " + PName + " " + to_string(PNumber) + " " + PLocation + " " + to_string(DNum);
+    return to_string(ProjectID) + " " + PName + " " + 
+    to_string(PNumber) + " " + PLocation + " " + to_string(DNum); // return a string value of a project objetc
 }

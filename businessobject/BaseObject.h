@@ -9,26 +9,26 @@ class BaseObject
 {
 
 public:
-   /** @brief Function is base class for setId 
+  /** @brief Function is Virtual function for setId 
      *  
-     *  Function is base class setId 
-     *  @return not return
+     *  Function is Virtual function for setId 
+     *  @return 
      */
-   virtual void SetID(int id)= 0;
+  virtual void SetID(int id) = 0;
 
-   /** @brief Function is base class for getId 
+  /** @brief Function is Virtual function for get Id 
      *  
-     *  Function is base class for getId 
-     *  @return the ID value
+     *  Function is Virtual function for setId 
+     *  @return 
      */
-   virtual int GetID() = 0;
+  virtual int GetID() = 0;
 
-   /** @brief Function is base class for conver object to string
-     *  Function is base class for conver object to string
-     *  @return the string value of object
+  /** @brief Function is Virtual function for to string 
+     *  
+     *  Function is Virtual function for setId 
+     *  @return 
      */
-
-   virtual string ToString() = 0;
+  virtual string ToString() = 0;
 };
 
 #endif

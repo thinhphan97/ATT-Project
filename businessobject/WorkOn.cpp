@@ -25,12 +25,12 @@ WorkOn::~WorkOn()
 
 int WorkOn::GetID()
 {
-    return WorkOnID; // return the value of project id
+    return WorkOnID;
 }
 
 void WorkOn::SetID(int workOnID)
 {
-    WorkOnID = workOnID; //assignment farameter for project id
+    WorkOnID = workOnID;
 }
 
 long WorkOn::GetESSN()
@@ -66,5 +66,6 @@ void WorkOn::SetHours(float hours)
 
 string WorkOn::ToString()
 {
-    return to_string(WorkOnID) + " " + to_string(ESSN) + " " + to_string(PNO) + " " + to_string(Hours);
+    return to_string(WorkOnID) + " " + to_string(ESSN) +
+           " " + to_string(PNO) + " " + to_string(Hours);
 }

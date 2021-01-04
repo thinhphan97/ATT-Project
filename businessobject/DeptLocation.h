@@ -43,58 +43,52 @@ public:
      */
     ~DeptLocation();
 
-    /** @brief Function get the value of dept location id
+    /** @brief Function get the value of department location id
      *  
-     *  Function get the value of dept location id
-     *  @return returns the value of dept location id that data type is int
+     *  Function get the value of department location id
+     *  @return returns the value of department location id that data type is int
      */
     int GetID() override;
 
-    /** @brief Function set the value for dept location id
+    /** @brief Function set the value for department location id
      *  
-     *  Function set the value for dept location id
+     *  Function set the value for department location id
      *  @return not return
      */
     void SetID(int deptLocationID);
 
-    /** @brief Function get the value of dept location number
+    /** @brief Function get the value of department location number
      *  
-     *  Function get the value of dept location number
-     *  @return returns the value of dept location number that data type is int
+     *  Function get the value of department location number
+     *  @return returns the value of department location number that data type is int
      */
     int GetDeptLocationNumber();
 
-    /** @brief Function set the value for dept location number
+    /** @brief Function set the value for department location number
      *  
-     *  Function set the value for dept location id
+     *  Function set the value for department location number
      *  @return not return
      */
     void SetDeptLocationNumber(int dNumber);
 
-    /** @brief Function get the value of dept location
+    /** @brief Function set the value for department location
      *  
-     *  Function get the value of dept location
-     *  @return returns the value of dept location that data type is string
-    string GetDeptLocation();
-
-    /** @brief Function set the value for dept location
-     *  
-     *  Function set the value for dept location
+     *  Function set the value for department location
      *  @return not return
      */
     void SetDeptLocation(string dLocation);
 
-    /** @brief Function get the value of dept location
+    /** @brief Function get the value of department location
      *  
-     *  Function get the value of dept location
-     *  @return returns the value of dept location that data type is string
+     *  Function get the value of department location
+     *  @return returns the value of department location that data type is string
      */
     string GetDeptLocation();
 
-    /** @brief Function convert the dept location object to string
+    /** @brief Function convert the department location object to string
      *  
-     *  Function convert the dept location object to json
-     *  @return a string of dept location
+     *  Function convert the department location object to json
+     *  @return a string of department location
      */
 
     string ToString() override;

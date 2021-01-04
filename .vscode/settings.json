@@ -2,7 +2,12 @@
     "files.associations": {
         "iostream": "cpp",
         "sstream": "cpp",
+<<<<<<< HEAD
+        "ostream": "cpp"
+    }
+=======
         "fstream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
+>>>>>>> b4aee0337fe094c6957fea6d5cf5c1fc854e485a
 }
