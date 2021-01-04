@@ -19,7 +19,7 @@ using namespace std;
 
 int main(){
     Function f;
-    f.function2();
+    f.function11("Research");
     system("pause");
     return 0;
 }

@@ -35,6 +35,22 @@ int Employee::GetId(){
 long Employee::GetSSN(){
     return SSN;
 }
+string Employee::GetFName(){
+    return FName;
+}
+long Employee::GetSuperSSN(){
+    return SuperSSN;
+}
+int Employee::GetDNO(){
+    return DNO;
+}
+int Employee::GetSalary(){
+    return Salary;
+}
+
+string Employee::GetLName(){
+    return LName;
+}
 json Employee::ToJson(){
     json e;
     e["Id"] = Id;

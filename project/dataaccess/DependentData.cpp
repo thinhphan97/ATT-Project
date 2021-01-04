@@ -23,7 +23,6 @@ void DependentData::ReadData(){
     char buff[maxSize];
     while (inFile.getline(buff,maxSize)){
         json j = json::parse(buff);
-        cout<<j["Id"]<<j["ESSN"]<<j["DependentName"]<<((string)j["Sex"])[0]<<j["BDate"]<<j["Relationship"]<< endl;
         
         Dependent p(
             j["Id"],
@@ -81,6 +80,9 @@ vector<Dependent> DependentData::SelectData(int essn){
     }
     return OutData;
 }
+Dependent DependentData::GetData(int i){
+    return _data[i];
+}
 int DependentData::PullFile(){
     ofstream outFile(file_name, ios::out);
     if(!outFile) return 0;
@@ -91,5 +93,5 @@ int DependentData::PullFile(){
     return 1;
 }
 int DependentData::GetMaxId(){
-    return _MaxId;
+    return _data.size();
 }

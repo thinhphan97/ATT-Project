@@ -23,8 +23,13 @@ class Employee:public BaseObject{
         Employee(int id, string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno);//the constructor take parameters of the object
         void SetId(int Id);
         int GetId();
+        string GetFName();
+        long GetSuperSSN();
         void SetSubId();
         long GetSSN();
+        int GetDNO();
+        int GetSalary();
+        string GetLName();
         string ConvertToString();
         json ToJson();
         

@@ -6,5 +6,3 @@
 {"Adress":"Houston,TX","Bdate":"1972-07-31","DNO":5,"Fname":"Joyce","Id":6,"Lname":"English","Minit":"A","SSN":453453453,"Salary":25000,"Sex":"F","SuperSSN":333445555}
 {"Adress":"Houston,TX","Bdate":"1969--03-29","DNO":4,"Fname":"Ahmad","Id":7,"Lname":"Jabber","Minit":"V","SSN":987987987,"Salary":25000,"Sex":"M","SuperSSN":987654321}
 {"Adress":"Houston,TX","Bdate":"1937-11-10","DNO":1,"Fname":"James","Id":8,"Lname":"Borg","Minit":"E","SSN":888665555,"Salary":55000,"Sex":"M","SuperSSN":0}
-{"Adress":"vietnam","Bdate":"13-09-1997","DNO":5,"Fname":"thinh","Id":9,"Lname":"phan","Minit":"V","SSN":123456123,"Salary":30000,"Sex":"F","SuperSSN":123456789}
-{"Adress":"vietnam","Bdate":"6-2-1997","DNO":4,"Fname":"tien","Id":10,"Lname":"nguyen","Minit":"D","SSN":123456456,"Salary":30000,"Sex":"F","SuperSSN":4}

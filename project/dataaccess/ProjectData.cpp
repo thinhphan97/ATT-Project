@@ -68,9 +68,9 @@ vector<BaseObject*> ProjectData::SelectAllData(){
     }
     return _outData;
 }
-Project ProjectData::SelectData(string PName){
+Project ProjectData::GetData(int pnumber){
     for(int i = 0; i <= _data.size(); i++){
-        if(Functionplus::StringToUpper(_data[i].GetPName())== Functionplus::StringToUpper(PName)){
+        if(_data[i].GetPNumber()== pnumber){
             return _data[i];
         }
     }
@@ -87,5 +87,5 @@ int ProjectData::PullFile(){
     return 1;
 }
 int ProjectData::GetMaxId(){
-    return _MaxId;
+    return _data.size();
 }

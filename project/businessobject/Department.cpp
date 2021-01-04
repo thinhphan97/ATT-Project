@@ -33,6 +33,9 @@ string Department::GetDName(){
 
     return DName;
 }
+int Department::GetDNumber(){
+    return DNumber;
+}
 string Department::ConvertToString(){
     string s;
     s += to_string(Id) + " | ";

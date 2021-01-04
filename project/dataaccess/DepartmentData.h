@@ -20,7 +20,7 @@ public:
     int DeleteData(string DNumber);
     int UpdateData(BaseObject* baseobject);
     vector<BaseObject*> SelectAllData();
-    Department SelectData(long mgrssn);
+    Department GetData(string dname);
     void ReadData();
     int PullFile();
     int GetMaxId();

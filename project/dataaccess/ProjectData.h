@@ -18,7 +18,7 @@ public:
     int DeleteData(string PName);
     int UpdateData(BaseObject* baseobject);
     vector<BaseObject*> SelectAllData();
-    Project SelectData(string PName);
+    Project GetData(int pnumber);
     int PullFile();
     int GetMaxId();
 };

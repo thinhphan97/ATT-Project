@@ -13,8 +13,10 @@
 #include "../dataaccess/ProjectData.h"
 #include "../businessobject/WorksOn.h"
 #include "../dataaccess/WorksOnData.h"
+#include "../libs/Functionplus.h"
 #include <string>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 void Function::function1(){
     bool current =true;
@@ -76,7 +78,7 @@ void Function::function2(){
         cout<< "Number "<< i << endl;
         cout<<"____________________________________________________"<<endl;
         string DName;
-        cout<<"Enter First Name :" ; cin>> DName;
+        cout<<"Enter Department Name :" ; cin>> DName;
         int DNumber;
         cout<<"Enter Department Number :"; cin>> DNumber;
         long MgrSSN;
@@ -91,7 +93,7 @@ void Function::function2(){
             current = false;
         }
     }
-    cout << "Press 1 to enter the data into the database of Depentdent"<<endl;
+    cout << "Press 1 to enter the data into the database of Department"<<endl;
     for(Department d:data){
         cout<<d.ConvertToString()<<endl;
     }
@@ -262,4 +264,125 @@ void Function::function6(){
         _data.PullFile();
         data.clear();
     }
+}
+
+void Function::function7(string name){
+    long ssn = -1;
+    EmployeeData data("Database/Employee.data");
+    data.ReadData();
+    cout<< "List Employees supervised by "<< name << endl;
+    int _max = data.GetMaxId();
+    for(int i = 0;i<_max; i++){
+        if(Functionplus::StringToUpper(data.GetData(i).GetFName()) == Functionplus::StringToUpper(name)){
+            ssn = data.GetData(i).GetSSN();
+        }
+    }
+    if(ssn==-1){
+        cout << "You need to re-enter the administrator name."<<endl;
+    }
+    else{
+        int j=0;
+        for(int j = 0;j<_max; j++){
+            if(data.GetData(j).GetSuperSSN()==ssn){
+                cout<< data.GetData(j).GetFName()<<" "<<data.GetData(j).GetLName()<<endl;
+                j++;
+            }
+        }
+        if(j==0){
+            cout << "The person you enter is an employee" << endl;
+        }
+    }
+
+}
+
+void Function::function8(){
+    DependentData dd("Database/Depentdent.data");
+    EmployeeData  de("Database/Employee.data");
+    dd.ReadData();
+    de.ReadData();
+    vector<long> SSN;
+    for(int i=0; i<dd.GetMaxId();i++){
+        if(dd.GetData(i).GetRelationship() == "SON"||dd.GetData(i).GetRelationship() == "DAUGHTER"){
+            SSN.push_back(dd.GetData(i).GetESSN());
+        }
+    }
+    if(SSN.size() == 0){
+        cout << "No employee that dependent is daughter or son";
+    }else{
+        sort(SSN.begin(),SSN.end());
+        SSN.erase(unique(SSN.begin(), SSN.end()), SSN.end());
+        for (int j = 0; j < de.GetMaxId(); j++) {
+            for(long ssn:SSN){
+                //cout<< ssn<<endl;
+                if (de.GetData(j).GetSSN() == ssn) {
+                    cout<< de.GetData(j).GetFName()<<" "<<de.GetData(j).GetLName()<<endl;
+                }
+            }
+        }
+    }
+}
+
+void Function::function9(int PNumber){
+    float total=0;
+    ProjectData dp("Database/Project.data");
+    dp.ReadData();
+    string PName = dp.GetData(PNumber).GetPName();
+    cout << "Name of Project: "<< PName << ", Total work hours: ";
+    WorksOnData dw("Database/Workson.data");
+    dw.ReadData();
+    for(int i = 0; i<dw.GetMaxId();i++){
+        if(dw.GetData(i).GetPNO()==PNumber){
+            total += dw.GetData(i).GetHours();
+        }
+    }
+    if(total == 0){
+        cout << "There is no project as you type. Please try again."<<endl;
+    }else{
+        cout << total<<endl;
+    }
+    
+ }
+
+void Function::function10(){
+    WorksOnData dw("Database/Workson.data");
+    dw.ReadData();
+    vector<long> ESSN;
+    for(int i=0; i<dw.GetMaxId(); i++){
+        ESSN.push_back(dw.GetData(i).GetESSN());
+    }
+    sort(ESSN.begin(),ESSN.end());
+    ESSN.erase(unique(ESSN.begin(), ESSN.end()), ESSN.end());
+    EmployeeData de("Database/Employee.data");
+    de.ReadData();
+    if(ESSN.size()==de.GetMaxId()){
+        cout<<"All staff are participating in the project"<<endl;
+    }else{
+        for(long ssn:ESSN){
+            de.DeleteData(ssn);
+        }
+        for(int j = 0; j<de.GetMaxId(); j++){
+            cout<< de.GetData(j).GetFName()<< " "<<de.GetData(j).GetLName() << endl;
+        }
+    }
+}
+
+void Function::function11(string dname){
+    // DepartmentData dd("Database/Department.data");
+    // dd.ReadData();
+    int Dnumber = 5;
+    //dd.GetData(dname).GetDNumber();
+    EmployeeData de("Database/Employee.data");
+    de.ReadData();
+    float total=0;
+    int count=0;
+    for(int i=0; i < de.GetMaxId(); i++){
+        if(de.GetData(i).GetDNO()==Dnumber){
+            count++;
+            total += de.GetData(i).GetSalary();
+        }
+    }
+    float Avr=total/count;
+    cout<<count;
+    cout<<total;
+    cout<<"average salary of" << dname << "department is :"<< Avr <<endl;
 }

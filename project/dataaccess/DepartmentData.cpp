@@ -3,6 +3,7 @@
 #include <fstream>
 #include <algorithm>
 #include "../libs/json.hpp"
+#include "../libs/Functionplus.h"
 #include <iostream>
 #include <string>
 
@@ -51,9 +52,9 @@ vector<BaseObject*> DepartmentData::SelectAllData(){
     }
     return _outData;
 }
-Department DepartmentData::SelectData(long mgrssn){
+Department DepartmentData::GetData(string dname){
     for(int i = 0; i <= _data.size(); i++){
-        if(_data[i].GetMgrSSN()==mgrssn){
+        if(Functionplus::StringToUpper(_data[i].GetDName())==Functionplus::StringToUpper(dname)){
             return _data[i];
         }
     }
@@ -89,5 +90,5 @@ int DepartmentData::PullFile(){
     return 1;
 }
 int DepartmentData::GetMaxId(){
-    return _MaxId;
+    return _data.size();
 }

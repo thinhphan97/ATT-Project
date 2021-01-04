@@ -75,6 +75,9 @@ WorksOn WorksOnData::SelectData(long essn){
             }
         }
 }
+WorksOn WorksOnData::GetData(int i){
+    return _data[i];
+}
 int WorksOnData::PullFile(){
     ofstream outFile(file_name, ios::out);
     if(!outFile) return 0;
@@ -85,5 +88,5 @@ int WorksOnData::PullFile(){
     return 1;
 }
 int WorksOnData::GetMaxId(){
-    return _MaxId;    
+    return _data.size();    
 }

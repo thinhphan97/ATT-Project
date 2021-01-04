@@ -56,12 +56,19 @@ class Department:public BaseObject{
          * @return return MgrSSN
         */
         long GetMgrSSN();
-        /**@brief Function get value of Dname
+        /** @brief Function get value of Dname
          * 
          * Function get value of Dname
-         * @return return Dname
+         *  @return return Dname
         */
         string GetDName();
+
+        /** @brief Function get value of Dnumber
+         * 
+         * Function get value of Dnumber
+         *  @return return Dnumber
+        */
+        int GetDNumber();
 
         /**@brief Function convert parameter in class to string
          * 

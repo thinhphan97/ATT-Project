@@ -20,6 +20,7 @@ public:
     int UpdateData(BaseObject* baseobject);
     vector<BaseObject*> SelectAllData();
     WorksOn SelectData(long essn);
+    WorksOn GetData(int i);
     int PullFile();
     int GetMaxId();
 };

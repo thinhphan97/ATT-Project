@@ -86,6 +86,9 @@ Employee EmployeeData::SelectData(long SSN){
     
     throw "SSN is not valid !";
 }
+Employee EmployeeData::GetData(int i){
+    return _data[i];
+}
 int EmployeeData::PullFile(){
     ofstream outFile(file_name, ios::out);
     if(!outFile) return 0;
@@ -96,5 +99,5 @@ int EmployeeData::PullFile(){
     return 1;
 }
 int EmployeeData::GetMaxId(){
-    return _MaxId;
+    return _data.size();
 }

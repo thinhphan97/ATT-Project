@@ -21,6 +21,7 @@ public:
     int UpdateData(BaseObject* baseobject);
     vector<BaseObject*> SelectAllData();
     vector<Dependent> SelectData(int essn);
+    Dependent GetData(int i);
     int PullFile();
     int GetMaxId();
 };
