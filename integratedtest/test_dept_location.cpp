@@ -21,19 +21,19 @@ using namespace std;
 int main()
 {
   //BaseUI *baseUI = new ProjectUI();
-  //BaseUI *baseUI = new DeptLocationUI();
+  BaseUI *baseUI = new DeptLocationUI();
   //BaseUI *baseUI = new WorkOnUI();
-  BaseUI *baseUI = new DependentUI();
-  DependentUI dependentUI;
+  //BaseUI *baseUI = new DependentUI();
+ // DependentUI dependentUI;
 
-  //baseUI->GetByID();
+  baseUI->GetByID();
 
-  //baseUI->Add();
+ // baseUI->Add();
 
   //baseUI->Delete();
 
   // baseUI->Update();
   //baseUI->GetAllData();
 
-  dependentUI.GetDependentSonOrDaughter();
+  //dependentUI.GetDependentSonOrDaughter();
 }
