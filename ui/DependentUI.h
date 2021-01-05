@@ -12,7 +12,7 @@ using namespace std;
 class DependentUI : public BaseUI
 {
 
-    DataAccess *dataAccess = new DependentData("dependent_data.txt");
+    DataAccess *dataAccess = new DependentData("Database/dependent_data.txt");
 
 public:
     /** @brief Function for add a object 

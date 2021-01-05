@@ -12,7 +12,7 @@ using namespace std;
 class DepartmentUI : public BaseUI
 {
 
-    DataAccess *dataAccess = new DepartmentData("Department_data.txt");
+    DataAccess *dataAccess = new DepartmentData("Database/Department_data.txt");
 
 public:
     /** @brief Function for add a object 

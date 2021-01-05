@@ -3,10 +3,11 @@
 #include "../businessobject/Dependent.h"
 #include "../businessobject/Project.h"
 #include "../businessobject/WorkOn.h"
+#include "../businessobject/Department.h"
 #include "../libs/Functionplus.h"
-#include "../libs/Utility.h"
 #include <string>
 #include <iostream>
+
 #include <algorithm>
 
 using namespace std;
@@ -102,7 +103,6 @@ void OtherUI::GetEmployeeNoProject()
         }
     }
 }
-
 void OtherUI::DivisionAverageSalary()
 {
     DataAccess *dataAccess = new EmployeeData("Database/employee_data.txt"); //load Data of Employee
@@ -149,8 +149,8 @@ void OtherUI::DivisionAverageSalary()
 
 void OtherUI::AverageSalaryByDepartment()
 {
-    DataAccess *DataDepart = new DepartmentData("department_data.txt");
-    DataAccess *DataEmploy = new EmployeeData("employee_data.txt");
+    DataAccess *DataDepart = new DepartmentData("Database/department_data.txt");
+    DataAccess *DataEmploy = new EmployeeData("Database/employee_data.txt");
     cout << "_____________Average Salary By Department___________" << endl;
     cout << "\n";
     cout << "\n";
@@ -224,9 +224,9 @@ void OtherUI::DisplayManangerNoDependent()
     cout << "\n";
     cout << "\n";
 
-    DataAccess *DataDepart = new DepartmentData("department_data.txt");
-    DataAccess *DataDepend = new DependentData("dependent_data.txt");
-    DataAccess *DataEmploy = new EmployeeData("employee_data.txt");
+    DataAccess *DataDepart = new DepartmentData("Database/department_data.txt");
+    DataAccess *DataDepend = new DependentData("Database/dependent_data.txt");
+    DataAccess *DataEmploy = new EmployeeData("Database/employee_data.txt");
     vector<BaseObject *> datadepart;
     vector<BaseObject *> datadepend;
     vector<BaseObject *> datademploy;
@@ -268,9 +268,9 @@ void OtherUI::DisplayEmployProjectDepart()
     cout << "\n";
     cout << "\n";
     cout << "\n";
-    DataAccess *DataEmoloy = new EmployeeData("employee_data.txt");
-    DataAccess *DataProject = new ProjectData("project_data.txt");
-    DataAccess *DataWorkOn = new WorkOnData("work_on_data.txt");
+    DataAccess *DataEmoloy = new EmployeeData("Database/employee_data.txt");
+    DataAccess *DataProject = new ProjectData("Database/project_data.txt");
+    DataAccess *DataWorkOn = new WorkOnData("Database/work_on_data.txt");
     vector<BaseObject *> dataemploy;
     vector<BaseObject *> dataproject;
     vector<BaseObject *> dataworkon;

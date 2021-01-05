@@ -9,33 +9,35 @@
 
 class OtherUI
 {
-    EmployeeData *employeeData = new EmployeeData("employee_data.txt");
-    DependentData *dependentData = new DependentData("dependent_data.txt");
-    ProjectData *projectData = new ProjectData("project_data.txt");
-    WorkOnData *workOnData = new WorkOnData("work_on_data.txt");
+    EmployeeData *employeeData = new EmployeeData("Database/employee_data.txt");
+    DependentData *dependentData = new DependentData("Database/dependent_data.txt");
+    ProjectData *projectData = new ProjectData("Database/project_data.txt");
+    WorkOnData *workOnData = new WorkOnData("Database/work_on_data.txt");
 
 public:
-    /** @brief Function get the names of all employees in a department and work for a particular project with the minimum number of hours 
-     *  Function get the names of all employees in a department and work for a particular project with the minimum number of hours 
+    /** @brief Function get the names of all employees being monitored by a manager
+     * Function get the names of all employees being monitored by a manager 
      *  @return not return
      */
     void GetEmployeeBySupervised();
-    /** @brief Function get all employee name have son or daughter
-     *  Function get all employee name have son or daughter
+
+    /** @brief Function get the names of all employees have son or daughter
+     * Function get the names of all employees have son or daughter 
      *  @return not return
      */
     void GetEmployeeHaveSonOrDaughter();
-    /** @brief get the name project and sum time of all employee 
-     *  get the name project and sum time of all employee 
+
+    /** @brief Function get the names of project and sum time of all employee in project
+     * Function get the names of project and sum time of all employee in project
      *  @return not return
      */
     void GetNameProjectAndTime();
-    /** @brief Function for Delete a object 
-     *  Function for Delete a object
+
+    /** @brief Function get the names of employee done have a project
+     * Function get the names of employee done have a project
      *  @return not return
      */
     void GetEmployeeNoProject();
-
     //void GetEmployeeBySupervised();
 
     /** @brief fucntion calculate the average income of employee by sex

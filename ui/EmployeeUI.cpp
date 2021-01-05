@@ -1,18 +1,19 @@
 #include "EmployeeUI.h"
+#include "../libs/Functionplus.h"
 #include <iostream>
 
 void EmployeeUI::Add()
 {
-    cout << "Add a Employee: "; //id is increasing number
-    string FName, MInit, LName; //fname, minit, lname are the full name of employee
-    long SSN;                   // ssn is employee identification number
-    string BDate, Adress;       // Bdate and Adress are birth day and adress of employee
+    cout << "Add a Employee: "<<endl; //id is increasing number
+    // string FName, MInit, LName; //fname, minit, lname are the full name of employee
+    // long SSN;                   // ssn is employee identification number
+    // string BDate, Adress;       // Bdate and Adress are birth day and adress of employee
     char Sex;                   //sex of the employee
     int Salary;                 // salary of the employee
     long SuperSSN;              //superSSN is the manager of the employee
     int DNO;
-    cout << "Please! Enter Employee infor: ";
-
+    cout << "Please! Enter Employee infor: "<<endl;
+    string FName, MInit, LName; //fname, minit, lname are the full name of employee
     cout << "Enter FName: ";
     cin >> FName;
 
@@ -21,15 +22,16 @@ void EmployeeUI::Add()
 
     cout << "Enter LName: ";
     cin >> LName;
-
+    long SSN;                   // ssn is employee identification number
     cout << "Enter SSN: ";
     cin >> SSN;
-
+    string BDate;       // Bdate and Adress are birth day and adress of employee
     cout << "Enter BDate: ";
     cin >> BDate;
-
+    cin.ignore();
+    string Adress;
     cout << "Enter Adress: ";
-    cin >> Adress;
+    getline(cin,Adress);
 
     cout << "Enter Sex: ";
     cin >> Sex;
@@ -45,6 +47,7 @@ void EmployeeUI::Add()
 
     // std::cin.ignore(32767, '\n');
     // getline(cin, PName);
+    Adress = Functionplus::ReplaceAll(Adress,' ','_');
 
     Employee employee(FName, MInit, LName, SSN, BDate, Adress, Sex, Salary, SuperSSN, DNO);
 
@@ -52,7 +55,7 @@ void EmployeeUI::Add()
     baseObject = &employee;
 
     dataAccess->AddData(baseObject);
-    dataAccess->ExportToFile("employee_data.txt");
+    dataAccess->ExportToFile("Database/employee_data.txt");
 }
 
 void EmployeeUI::Delete()

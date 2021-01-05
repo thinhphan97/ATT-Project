@@ -5,8 +5,8 @@ void DeptLocationUI::Add()
 
     int DeptLocationsID, DNumber;
     string DLocation;
-    cout << "Add a DeptLocation: ";
-    cout << "Enter DeptLocation infor. please! ";
+    cout << "Add a DeptLocation: "<<endl;
+    cout << "Enter DeptLocation infor. please! "<<endl;
 
     cout << "Enter DeptLocation DNumber: ";
     cin >> DNumber;
@@ -30,7 +30,7 @@ void DeptLocationUI::Add()
     dataAccess->AddData(baseObject);
 
     // write to file
-    dataAccess->ExportToFile("dept_location.txt");
+    dataAccess->ExportToFile("Database/dept_location.txt");
 }
 
 void DeptLocationUI::Delete()
@@ -42,7 +42,7 @@ void DeptLocationUI::Delete()
     // delete a baseobject to vector
     dataAccess->DeleteData(iD);
     // write to file
-    dataAccess->ExportToFile("dept_location.txt");
+    dataAccess->ExportToFile("Database/dept_location.txt");
 }
 
 void DeptLocationUI::Update()
@@ -65,7 +65,7 @@ void DeptLocationUI::Update()
 
     dataAccess->UpdateData(iD, d);
 
-    dataAccess->ExportToFile("dept_location.txt");
+    dataAccess->ExportToFile("Database/dept_location.txt");
 }
 
 void DeptLocationUI::GetAllData()

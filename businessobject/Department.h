@@ -58,18 +58,53 @@ public:
      */
     void SetID(int id);
 
-    /** @brief Function get the value of 
+    /** @brief Function get the value of DName
      *  
-     *  Function get the value of ESSN
-     *  @return returns the value of  project number that data type is int
+     *  Function get the value of DName
+     *  @return returns the value of  DName that data type is string
      */
     string GetDName();
+    /** @brief Function set the value for DName
+     *  
+     *  Function set the value for DName
+     *  @return not return
+     */
     void SetDName(string);
+    /** @brief Function get the value of DNumber
+     *  
+     *  Function get the value of DNumber
+     *  @return returns the value of  DNumber that data type is int
+     */
     int GetDNumber();
+    /** @brief Function set the value for DNumber
+     *  
+     *  Function set the value for DNumber
+     *  @return not return
+     */
     void SetDNumber(int);
+    /** @brief Function get the value of MgrSSN
+     *  
+     *  Function get the value of MgrSSN
+     *  @return returns the value of MgrSSN that data type is long
+     */
     long GetMgrSSN();
+     /** @brief Function set the value for MgrSSN
+     *  
+     *  Function set the value for MgrSSN
+     *  @return not return
+     */
     void SetMgrSSN(long);
+    /** @brief Function get the value of MgrStartDate
+     *  
+     *  Function get the value of MgrStartDate
+     *  @return returns the value of  project number that data type is string
+     */
     string GetMgrStartDate();
+    /** @brief Function set the value for MgrStartDate
+     *  
+     *  Function set the value for MgrStartDate
+     *  @return not return
+     */
     void SetMgrStartDate(string);
 
     /** @brief Function convert the project object to string

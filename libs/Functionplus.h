@@ -7,7 +7,7 @@ class Functionplus
 {
 
 public:
-    static string StringToUpper(string s);
+    static string StringToUpper(string s); 
     static string ReplaceAll(string s, const char &search, const char &replace);
 };
 #endif

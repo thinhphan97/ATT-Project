@@ -3,13 +3,13 @@
 
 void ProjectUI::Add()
 {
-    cout << "Add a Project: ";
+    cout << "Add a Project: "<<endl;
     int ID;
     string PName;
     int PNumber;
     string PLocation;
     int DNum;
-    cout << "Please! Enter Project infor: ";
+    cout << "Please! Enter Project infor. "<<endl;
 
     cout << "Enter Project PName: ";
     cin >> PName;
@@ -20,9 +20,9 @@ void ProjectUI::Add()
     cin >> PNumber;
 
     cout << "Enter Project PLocation: ";
-    cin >> PLocation;
-    // std::cin.ignore(32767, '\n');
-    // getline(cin, PLocation);
+    // cin >> PLocation;
+    std::cin.ignore();
+    getline(cin, PLocation);
 
     cout << "Enter Project DNum: ";
     cin >> DNum;
@@ -33,7 +33,7 @@ void ProjectUI::Add()
     baseObject = &project;
 
     dataAccess->AddData(baseObject);
-    dataAccess->ExportToFile("project_data.txt");
+    dataAccess->ExportToFile("Database/project_data.txt");
 }
 
 void ProjectUI::Delete()
@@ -52,7 +52,7 @@ void ProjectUI::Delete()
     if (c == 'y')
     {
         dataAccess->DeleteData(iD);
-        dataAccess->ExportToFile("project_data.txt");
+        dataAccess->ExportToFile("Database/project_data.txt");
     }
 }
 
@@ -91,7 +91,7 @@ void ProjectUI::Update()
 
     dataAccess->UpdateData(ID, p);
 
-    dataAccess->ExportToFile("project_data.txt");
+    dataAccess->ExportToFile("Database/project_data.txt");
 }
 
 void ProjectUI::GetAllData()

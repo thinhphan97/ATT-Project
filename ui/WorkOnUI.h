@@ -12,7 +12,7 @@ using namespace std;
 class WorkOnUI : public BaseUI
 {
 
-    DataAccess *dataAccess = new WorkOnData("work_on_data.txt");
+    DataAccess *dataAccess = new WorkOnData("Database/work_on_data.txt");
 
 public:
     /** @brief Function for add a object 

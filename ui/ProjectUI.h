@@ -12,7 +12,7 @@ using namespace std;
 class ProjectUI : public BaseUI
 {
 
-    DataAccess *dataAccess = new ProjectData("project_data.txt");
+    DataAccess *dataAccess = new ProjectData("Database/project_data.txt");
 
 public:
     /** @brief Function for add a object 

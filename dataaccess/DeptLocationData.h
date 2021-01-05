@@ -31,5 +31,6 @@ public:
      *  @return 1 if success
      */
   int UpdateData(int ID, BaseObject *baseObject) override;
+
 };
 #endif
