@@ -17,7 +17,6 @@ EmployeeData::EmployeeData(string file_name)
     // open and Read from the file
     ifstream fileIn(file_name);
 
-
     int numberEmployee = 0;
     fileIn >> numberEmployee;
 
@@ -83,3 +82,16 @@ int EmployeeData::UpdateData(int ID, BaseObject *baseObject)
     }
     return 0;
 }
+Employee *EmployeeData::GetEmployeeBySSN(long ssn)
+{
+    Employee *e = nullptr;   
+    for (BaseObject *bo : _data)
+    {
+        if (((Employee *)bo)->GetSSN() == ssn)
+
+        return ((Employee *)bo);
+    }
+    return e;
+}
+
+
