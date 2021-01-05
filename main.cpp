@@ -6,12 +6,15 @@
 
 using namespace std;
 
-int main(){
-    Employee e(0,"John","B","Smith",123456789,"1965-01-09","731Fodren, Houston,TX", 'M', 30000, 333445555, 5);
-    Department d(0,"Research", 5, 333445555,"1988-05-22");
-    DataAccess* data = new EmployeeData("Employee.data");
-    data->AddData(&e);
-    cout<< e.ToString()<< endl;
-    cout<< d.ToString();
-    return 0;
+int main()
+{
+    cout << "MENU" < endl;
+    cout << "_______________________________________" << endl;
+    cout << "1. Employee." << endl;
+    cout << "2. Employee." << endl;
+    cout << "3. Employee." << endl;
+    cout << "4. Employee." << endl;
+    cout << "5. Employee." << endl;
+    cout << "6. Employee." << endl;
+    cout << "0. Employee." << endl;
 }

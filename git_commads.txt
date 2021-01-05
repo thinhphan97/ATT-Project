@@ -28,6 +28,12 @@ g++ integratedtest/test_dept_location.cpp businessobject/WorkOn.cpp dataaccess/W
 g++ integratedtest/test_dept_location.cpp businessobject/Dependent.cpp dataaccess/DependentData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DependentUI.cpp  -o main.exe
 
 
+g++ integratedtest/test_dept_location.cpp businessobject/DeptLocation.cpp dataaccess/DeptLocationData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DeptLocationUI.cpp integratedtest/test_dept_location.cpp businessobject/Project.cpp dataaccess/ProjectData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/ProjectUI.cpp businessobject/WorkOn.cpp dataaccess/WorkOnData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/WorkOnUI.cpp  -o main.exe
+
+g++ integratedtest/test_dept_location.cpp businessobject/Dependent.cpp dataaccess/DependentData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DependentUI.cpp  -o main.exe
+
+
+g++ integratedtest/test_other_ui.cpp businessobject/Dependent.cpp dataaccess/DependentData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DependentUI.cpp  -o main.exe
 
 
 
@@ -39,4 +45,11 @@ g++ integratedtest/test_dept_location.cpp businessobject/Dependent.cpp dataacces
 
 
 
-g++ integratedtest/test_dept_location.cpp businessobject/DeptLocation.cpp dataaccess/DeptLocationData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DeptLocationUI.cpp integratedtest/test_dept_location.cpp businessobject/Project.cpp dataaccess/ProjectData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/ProjectUI.cpp integratedtest/test_dept_location.cpp businessobject/WorkOn.cpp dataaccess/WorkOnData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/WorkOnUI.cpp integratedtest/test_dept_location.cpp businessobject/Dependent.cpp dataaccess/DependentData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DependentUI.cpp ui/OtherUI.cpp  -o main.exe
+
+
+
+
+
+
+
+g++ integratedtest/test_other_ui.cpp businessobject/DeptLocation.cpp dataaccess/DeptLocationData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DeptLocationUI.cpp businessobject/Project.cpp dataaccess/ProjectData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/ProjectUI.cpp businessobject/WorkOn.cpp dataaccess/WorkOnData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/WorkOnUI.cpp businessobject/Dependent.cpp dataaccess/DependentData.cpp businessobject/BaseObject.cpp dataaccess/DataAccess.cpp ui/BaseUI.cpp ui/DependentUI.cpp ui/OtherUI.cpp  -o main.exe
