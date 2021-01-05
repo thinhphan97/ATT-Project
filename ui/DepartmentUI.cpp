@@ -3,12 +3,12 @@
 
 void DepartmentUI::Add()
 {
-    cout << "Add a Department: ";
+    cout << "Add a Department: "<<endl;
     string DName;
     int DNumber;
     long MgrSSN;
     string MgrStartDate;
-    cout << "Please! Enter Department infor: ";
+    cout << "Please! Enter Department infor: "<<endl;
 
     cout << "Enter DName: ";
     cin >> DName;
@@ -30,7 +30,7 @@ void DepartmentUI::Add()
     baseObject = &department;
 
     dataAccess->AddData(baseObject);
-    dataAccess->ExportToFile("department_data.txt");
+    dataAccess->ExportToFile("Database/department_data.txt");
 }
 
 void DepartmentUI::Delete()
@@ -49,7 +49,7 @@ void DepartmentUI::Delete()
     if (c == 'y')
     {
         dataAccess->DeleteData(iD);
-        dataAccess->ExportToFile("department_data.txt");
+        dataAccess->ExportToFile("Database/department_data.txt");
     }
 }
 
@@ -83,7 +83,7 @@ void DepartmentUI::Update()
     Department *w = new Department(DName, DNumber, MgrSSN, MgrStartDate);
 
     dataAccess->UpdateData(iD, w);
-    dataAccess->ExportToFile("department_data.txt");
+    dataAccess->ExportToFile("Database/department_data.txt");
 }
 
 void DepartmentUI::GetAllData()

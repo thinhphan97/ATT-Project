@@ -5,8 +5,11 @@ class OtherUI
 {
 
 public:
-void GetEmployeeBySupervised();
+    //void GetEmployeeBySupervised();
+    void DivisionAverageSalary();
+    void AverageSalaryByDepartment();
+    void DisplayManangerNoDependent();
+    void DisplayEmployProjectDepart();
 };
-
 
 #endif

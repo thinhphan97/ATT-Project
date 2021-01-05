@@ -3,12 +3,12 @@
 
 void WorkOnUI::Add()
 {
-    cout << "Add a WorkOn: ";
+    cout << "Add a WorkOn: "<<endl;
     int id;
     long essn;
     int pno;
     float hours;
-    cout << "Please! Enter WorkOn infor: ";
+    cout << "Please! Enter WorkOn infor: "<<endl;
 
     cout << "Enter ESSN: ";
     cin >> essn;
@@ -29,7 +29,7 @@ void WorkOnUI::Add()
     baseObject = &workOn;
 
     dataAccess->AddData(baseObject);
-    dataAccess->ExportToFile("work_on_data.txt");
+    dataAccess->ExportToFile("Database/work_on_data.txt");
 }
 
 void WorkOnUI::Delete()
@@ -48,7 +48,7 @@ void WorkOnUI::Delete()
     if (c == 'y')
     {
         dataAccess->DeleteData(iD);
-        dataAccess->ExportToFile("work_on_data.txt");
+        dataAccess->ExportToFile("Database/work_on_data.txt");
     }
 }
 
@@ -80,7 +80,7 @@ void WorkOnUI::Update()
     WorkOn *w = new WorkOn(essn, pno, hours);
 
     dataAccess->UpdateData(id, w);
-    dataAccess->ExportToFile("work_on_data.txt");
+    dataAccess->ExportToFile("Database/work_on_data.txt");
 }
 
 void WorkOnUI::GetAllData()

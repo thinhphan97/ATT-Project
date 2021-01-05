@@ -38,7 +38,7 @@ void DependentUI::Add()
     baseObject = &dependent;                  //assigned baseObject by dependent address
 
     dataAccess->AddData(baseObject);                // add baseObject to vector
-    dataAccess->ExportToFile("dependent_data.txt"); //write object to file
+    dataAccess->ExportToFile("Database/dependent_data.txt"); //write object to file
 }
 
 void DependentUI::Delete()
@@ -57,7 +57,7 @@ void DependentUI::Delete()
     if (c == 'y')
     {
         dataAccess->DeleteData(iD);                     //delete object in vector
-        dataAccess->ExportToFile("dependent_data.txt"); //write to file
+        dataAccess->ExportToFile("Database/dependent_data.txt"); //write to file
     }
 }
 
@@ -73,7 +73,7 @@ void DependentUI::Update()
     cout << "Enter Dependent ID for update: ";
     cin >> id;
 
-    cout << "Enter Dependent infor: ";
+    cout << "Enter Dependent infor: "<<endl;
 
     cout << "Enter ESSN: ";
     cin >> essn;
@@ -99,7 +99,7 @@ void DependentUI::Update()
     Dependent *d = new Dependent(essn, dependentName, sex, bDate, relationship);
 
     dataAccess->UpdateData(id, d);                  //edit object in vector
-    dataAccess->ExportToFile("dependent_data.txt"); //write to file
+    dataAccess->ExportToFile("Database/dependent_data.txt"); //write to file
 }
 
 void DependentUI::GetAllData()
