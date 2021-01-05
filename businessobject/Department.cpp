@@ -1,54 +1,76 @@
 #include "Department.h"
-#include <iostream>
 
-using namespace std;
-
-Department::Department(){};
-Department::Department(string DName, int DNumber, long MgrSSN, string MgrStartDate)
+Department::Department()
 {
-    this->DName = DName;
-    this->DNumber = DNumber;
-    this->MgrSSN = MgrSSN;
-    this->MgrStartDate = MgrStartDate;
 }
 
-Department::Department(int Id, string DName, int DNumber, long MgrSSN, string MgrStartDate){
-    this->Id = Id;
-    this->DName = DName;
-    this->DNumber = DNumber;
-    this->MgrSSN = MgrSSN;
-    this->MgrStartDate = MgrStartDate;
+Department::Department(int id, string dname, int dnumber, long mgrssn, string mgrstartdate)
+{
+    Id = id;
+    DName = dname;
+    DNumber = dnumber;
+    MgrSSN = mgrssn;
+    MgrStartDate = mgrstartdate;
 }
-int Department::GetId(){
+
+Department::Department(string dname, int dnumber, long mgrssn, string mgrstartdate)
+{
+    DName = dname;
+    DNumber = dnumber;
+    MgrSSN = mgrssn;
+    MgrStartDate = mgrstartdate;
+}
+
+Department::~Department()
+{
+}
+
+int Department::GetID()
+{
     return Id;
 }
-void Department::SetId(int Id){
-    this->Id =Id;
+
+void Department::SetID(int id)
+{
+    Id = id;
 }
-string Department::GetDName(){
+
+string Department::GetDName()
+{
     return DName;
 }
-void Department::SetDName(string DName){
-    this->DName = DName;
+void Department::SetDName(string dname)
+{
+    DName = dname;
 }
-int Department::GetDNumber(){
+int Department::GetDNumber()
+{
     return DNumber;
 }
-void Department::SetDNumber(int DNumber){
-    this->DNumber = DNumber;
+void Department::SetDNumber(int dnumber)
+{
+    DNumber = dnumber;
 }
-long Department::GetMgrSSN(){
+long Department::GetMgrSSN()
+{
     return MgrSSN;
 }
-void Department::SetMgrSSN(long MgrSSN){
-    this->MgrSSN = MgrSSN;
+void Department::SetMgrSSN(long mgrssn)
+{
+    MgrSSN = mgrssn;
 }
-string Department::GetMgrStartDate(){
+string Department::GetMgrStartDate()
+{
     return MgrStartDate;
 }
-void Department::SetMgrStartDate(string MgrStartDate){
-    this->MgrStartDate = MgrStartDate;
+void Department::SetMgrStartDate(string mgrstartdate)
+{
+    MgrStartDate = mgrstartdate;
 }
-string  Department::ToString(){
-    return to_string(Id)+" "+DName+" "+to_string(DNumber)+" "+to_string(MgrSSN)+" "+MgrStartDate;
+
+string Department::ToString()
+{
+
+    return to_string(Id) + " " + DName + " " + to_string(DNumber) + " " +
+           to_string(MgrSSN) + " " + MgrStartDate;
 }

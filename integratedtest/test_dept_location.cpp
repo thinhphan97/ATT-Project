@@ -16,6 +16,14 @@
 #include "../dataaccess/DependentData.h"
 #include "../businessobject/Department.h"
 
+#include "../ui/EmployeeUI.h"
+#include "../dataaccess/EmployeeData.h"
+#include "../businessobject/Employee.h"
+
+
+#include "../ui/DepartmentUI.h"
+#include "../dataaccess/DepartmentData.h"
+#include "../businessobject/Department.h"
 using namespace std;
 
 int main()
@@ -23,17 +31,19 @@ int main()
   //BaseUI *baseUI = new ProjectUI();
   //BaseUI *baseUI = new DeptLocationUI();
   //BaseUI *baseUI = new WorkOnUI();
-  BaseUI *baseUI = new DependentUI();
-  DependentUI dependentUI;
+  //BaseUI *baseUI = new DependentUI();
+  // BaseUI *baseUI = new EmployeeUI();
+    BaseUI *baseUI = new DepartmentUI();
+  //DependentUI dependentUI;
 
   //baseUI->GetByID();
 
- // baseUI->Add();
+  // baseUI->Add();
 
-  //baseUI->Delete();
+  baseUI->Delete();
 
   // baseUI->Update();
-  //baseUI->GetAllData();
+ // baseUI->GetAllData();
 
-  dependentUI.GetDependentSonOrDaughter();
-}
+ // dependentUI.GetDependentSonOrDaughter();
+}//

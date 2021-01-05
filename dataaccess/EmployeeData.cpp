@@ -1,35 +1,36 @@
 #include "EmployeeData.h"
-#include <string>
 #include <fstream>
 #include <iostream>
-using namespace std;
+#include <string>
 
-
-
-EmployeeData::EmployeeData(){
-    _data.resize(0);
+EmployeeData::EmployeeData()
+{
+    _data.resize(0); // resize for data vetor to 0
     _maxId = 0;
 }
-EmployeeData::EmployeeData(string file_name){
-    _maxId = 0;
-    _data.resize(0);
-    this->file_name = file_name;
-}
-void EmployeeData::ReadData(){
 
+EmployeeData::EmployeeData(string file_name)
+{
+    _maxId = 0;
+    _data.resize(0); // resize for data vetor to 0
+
+    // open and Read from the file
     ifstream fileIn(file_name);
-    int numberProject = 0;
-    fileIn >> numberProject;
-    int Id;
-    string FName, MInit, LName; 
-    long SSN;
-    string BDate, Adress; 
-    char Sex;
-    int Salary;
-    long SuperSSN;
+
+
+    int numberEmployee = 0;
+    fileIn >> numberEmployee;
+
+    int Id;                     //id is increasing number
+    string FName, MInit, LName; //fname, minit, lname are the full name of employee
+    long SSN;                   // ssn is employee identification number
+    string BDate, Adress;       // Bdate and Adress are birth day and adress of employee
+    char Sex;                   //sex of the employee
+    int Salary;                 // salary of the employee
+    long SuperSSN;              //superSSN is the manager of the employee
     int DNO;
 
-    for (int i = 0; i < numberProject; i++)
+    for (int i = 0; i < numberEmployee; i++)
     {
         fileIn >> Id;
         fileIn >> FName;
@@ -42,35 +43,40 @@ void EmployeeData::ReadData(){
         fileIn >> Salary;
         fileIn >> SuperSSN;
         fileIn >> DNO;
- 
+        // std::cin.ignore(32767, '\n');
+        // getline(fileIn, DLocation);
 
         BaseObject *baseObject = new Employee(Id, FName, MInit, LName, SSN, BDate, Adress, Sex, Salary, SuperSSN, DNO);
-
+        // add object to vetor
         _data.push_back(baseObject);
         _maxId = Id;
     }
+    // close the file
     fileIn.close();
 }
 
-int EmployeeData::UpdateData(int ID, BaseObject *baseObject){
-    Employee* employee = (Employee*) baseObject;
+int EmployeeData::UpdateData(int ID, BaseObject *baseObject)
+{
+    // cast Employee pointer to Employee pointer
+    Employee *employee = (Employee *)baseObject;
     for (int i = 0; i < _data.size(); i++)
     {
-
         if ((_data.at(i)->GetID()) == ID)
         {
-            Employee* p = (Employee*)_data.at(i);
+            // cast Employee pointer to Employee pointer
+            Employee *e = (Employee *)_data.at(i);
 
-            p->SetFName(employee->GetFName());
-            p->SetMInit(employee->GetMInit());
-            p->SetLName(employee->GetLName());
-            p->SetSSN(employee->GetSSN());
-            p->SetBDate(employee->GetBDate());
-            p->SetAdress(employee->GetAdress());
-            p->SetSex(employee->GetSex());
-            p->SetSalary(employee->GetSalary());
-            p->SetSuperSSN(employee->GetSuperSSN());
-            p->SetDNO(employee->GetDNO());
+            // set EmployeeNumber and Employee
+            e->SetFName(employee->GetFName());
+            e->SetMInit(employee->GetMInit());
+            e->SetLName(employee->GetLName());
+            e->SetSSN(employee->GetSSN());
+            e->SetBDate(employee->GetBDate());
+            e->SetAdress(employee->GetAdress());
+            e->SetSex(employee->GetSex());
+            e->SetSalary(employee->GetSalary());
+            e->SetSuperSSN(employee->GetSuperSSN());
+            e->SetDNO(employee->GetDNO());
 
             return 1;
         }

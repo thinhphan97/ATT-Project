@@ -1,7 +1,0 @@
-{"BDate":"1986-04-05","DependentName":"Alice","ESSN":333445555,"Id":1,"Relationship":"DAUGHTER","Sex":"F"}
-{"BDate":"1983-10-25","DependentName":"Theodore","ESSN":333445555,"Id":2,"Relationship":"SON","Sex":"M"}
-{"BDate":"1958-05-03","DependentName":"Joy","ESSN":333445555,"Id":3,"Relationship":"SPOUSE","Sex":"F"}
-{"BDate":"1942-02-28","DependentName":"Abner","ESSN":987654321,"Id":4,"Relationship":"SPOUSE","Sex":"M"}
-{"BDate":"1988-01-04","DependentName":"Michael","ESSN":123456789,"Id":5,"Relationship":"SON","Sex":"M"}
-{"BDate":"1988-12-30","DependentName":"Alice","ESSN":123456789,"Id":6,"Relationship":"DAUGHTER","Sex":"F"}
-{"BDate":"1967-05-05","DependentName":"Elizabeth","ESSN":123456789,"Id":7,"Relationship":"SPOUSE","Sex":"F"}

@@ -1,97 +1,138 @@
 #include "Employee.h"
-#include "../libs/Utility.h"
-Employee::Employee(){};
-Employee::Employee(string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno){
-    this->FName = fname;
-    this->MInit = minit;
-    this->LName = lname;
-    this->SSN = ssn;
-    this->BDate = bdate;
-    this->Adress = adress;
-    this->Sex = sex;
-    this->Salary = salary;
-    this->SuperSSN = superSSN;
-    this->DNO = dno;
-};
-Employee::Employee(int id,string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary,long superSSN, int dno){
-    this->Id = id;
-    this->FName = fname;
-    this->MInit = minit;
-    this->LName = lname;
-    this->SSN = ssn;
-    this->BDate = bdate;
-    this->Adress = adress;
-    this->Sex = sex;
-    this->Salary = salary;
-    this->SuperSSN = superSSN;
-    this->DNO = dno;
-};
-int Employee::GetID(){
+
+Employee::Employee()
+{
+}
+
+Employee::Employee(string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary, long superSSN, int dno)
+{
+    FName = fname;
+    MInit = minit;
+    LName = lname;
+    SSN = ssn;
+    BDate = bdate;
+    Adress = adress;
+    Sex = sex;
+    Salary = salary;
+    SuperSSN = superSSN;
+    DNO = dno;
+}
+
+Employee::Employee(int id, string fname, string minit, string lname, long ssn, string bdate, string adress, char sex, int salary, long superSSN, int dno)
+{
+    Id = id;
+    FName = fname;
+    MInit = minit;
+    LName = lname;
+    SSN = ssn;
+    BDate = bdate;
+    Adress = adress;
+    Sex = sex;
+    Salary = salary;
+    SuperSSN = superSSN;
+    DNO = dno;
+}
+
+Employee::~Employee()
+{
+}
+
+int Employee::GetID()
+{
     return Id;
 }
-void Employee::SetID(int Id){
-    this->Id = Id;
+
+void Employee::SetID(int id)
+{
+    Id = id;
 }
-string Employee::GetFName(){
+
+string Employee::GetFName()
+{
     return FName;
 }
-void Employee::SetFName(string FName){
-    this->FName =FName;
+
+void Employee::SetFName(string fname)
+{
+    FName = fname;
 }
-string Employee::GetMInit(){
+
+string Employee::GetMInit()
+{
     return MInit;
 }
-void Employee::SetMInit(string MInit){
-    this->MInit = MInit;
+void Employee::SetMInit(string minit)
+{
+    MInit = minit;
 }
-string Employee::GetLName(){
+string Employee::GetLName()
+{
     return LName;
 }
-void Employee::SetLName(string LName){
-    this->LName = LName;
+void Employee::SetLName(string lname)
+{
+    LName = lname;
 }
-long Employee::GetSSN(){
+long Employee::GetSSN()
+{
     return SSN;
 }
-void Employee::SetSSN(long SSN){
-    this-> SSN = SSN;
+void Employee::SetSSN(long ssn)
+{
+    SSN = ssn;
 }
-string Employee::GetBDate(){
+string Employee::GetBDate()
+{
     return BDate;
 }
-void Employee::SetBDate(string BDate){
-    this->BDate = BDate;
+void Employee::SetBDate(string bdate)
+{
+    BDate = bdate;
 }
-string Employee::GetAdress(){
+string Employee::GetAdress()
+{
     return Adress;
 }
-void Employee::SetAdress(string Adress){
-    this-> Adress = Adress;
+void Employee::SetAdress(string address)
+{
+    Adress = address;
 }
-char Employee::GetSex(){
+char Employee::GetSex()
+{
     return Sex;
 }
-void Employee::SetSex(char Sex){
-    this->Sex = Sex;
+void Employee::SetSex(char sex)
+{
+    Sex = sex;
 }
-int Employee::GetSalary(){
+int Employee::GetSalary()
+{
     return Salary;
 }
-void Employee::SetSalary(int Salary){
-    this->Salary = Salary;
+void Employee::SetSalary(int salary)
+{
+    Salary = salary;
 }
-long Employee::GetSuperSSN(){
+long Employee::GetSuperSSN()
+{
     return SuperSSN;
 }
-void Employee::SetSuperSSN(long SuperSSN){
-    this->SuperSSN = SuperSSN;
+void Employee::SetSuperSSN(long supperssn)
+{
+    SuperSSN = supperssn;
 }
-int Employee::GetDNO(){
+int Employee::GetDNO()
+{
     return DNO;
 }
-void Employee::SetDNO(int){
-    this->DNO = DNO;
+void Employee::SetDNO(int dno)
+{
+    DNO = dno;
 }
-string Employee::ToString(){
-    return to_string(Id)+" "+FName+" "+MInit+" "+LName+" "+to_string(SSN)+" "+BDate+" "+Utility::replaceAll(Adress," ","_") +" "+string(1, Sex)+" "+to_string(Salary)+" "+to_string(SuperSSN)+" "+to_string(DNO);
+
+string Employee::ToString()
+{
+    return to_string(Id) + " " + FName + " " + MInit + " " + LName + " " +
+           to_string(SSN) + " " + BDate + " " + Adress + " " + Sex + " " +
+           to_string(Salary) + " " + to_string(SuperSSN) + " " + to_string(DNO);
 }
