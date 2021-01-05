@@ -80,3 +80,22 @@ void OtherUI::GetNameProjectAndTime()
     }
     cout << "The Sum time :" << sumtime << endl;
 }
+
+void OtherUI::GetEmployeeNoProject()
+{
+    for (BaseObject *bo : employeeData->GetAllData())
+    {
+        int temp = 0;
+        for (BaseObject *bowo : workOnData->GetAllData())
+        {
+            if ((((Employee *)bo)->GetSSN()) == (((WorkOn *)bowo)->GetESSN()))
+            {
+                temp = 1;
+            }
+        }
+        if (temp == 0)
+        {
+            cout << ((Employee *)bo)->GetFName() << " " << ((Employee *)bo)->GetMInit() << " " << ((Employee *)bo)->GetLName() << endl;
+        }
+    }
+}

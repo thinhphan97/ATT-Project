@@ -17,6 +17,7 @@ public:
     void GetEmployeeBySupervised();
     void GetEmployeeHaveSonOrDaughter();
     void GetNameProjectAndTime();
+    void GetEmployeeNoProject();
 };
 
 #endif
