@@ -40,8 +40,10 @@ int main()
 
   OtherUI otherUI;
 
-  //otherUI.GetEmployeeBySupervised();
-  otherUI.GetEmployeeHaveSonOrDaughter();
+  // otherUI.GetEmployeeBySupervised();
+  //otherUI.GetEmployeeHaveSonOrDaughter();
+
+  otherUI.GetNameProjectAndTime();
 
   //baseUI->GetByID();
 

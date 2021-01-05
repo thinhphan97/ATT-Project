@@ -1,6 +1,8 @@
 #include "OtherUI.h"
 #include "../businessobject/Employee.h"
 #include "../businessobject/Dependent.h"
+#include "../businessobject/Project.h"
+#include "../businessobject/WorkOn.h"
 #include <string>
 #include <iostream>
 
@@ -21,22 +23,19 @@ void OtherUI::GetEmployeeBySupervised()
         if (((Employee *)bo)->GetLName() == name)
         {
             ssn = (((Employee *)bo)->GetSSN());
+            for (BaseObject *bo : employeeData->GetAllData())
+            {
+                if (((Employee *)bo)->GetSuperSSN() == ssn)
+                {
+                    cout << ((Employee *)bo)->ToString() << endl;
+                }
+            }
         }
     }
 
     if (ssn == 0)
     {
         cout << "name is wrong" << endl;
-    }
-    else
-    {
-        for (BaseObject *bo : employeeData->GetAllData())
-        {
-            if (((Employee *)bo)->GetSuperSSN() == ssn)
-            {
-                cout << ((Employee *)bo)->ToString() << endl;
-            }
-        }
     }
 }
 
@@ -56,4 +55,28 @@ void OtherUI::GetEmployeeHaveSonOrDaughter()
     {
         cout << "list is empty" << endl;
     }
+}
+
+void OtherUI::GetNameProjectAndTime()
+{
+    int pnum;
+    cout << "Enter the Project Number:  ";
+    cin >> pnum;
+    float sumtime = 0;
+    for (BaseObject *bo : projectData->GetAllData())
+    {
+        if ((((Project *)bo)->GetProjectNumber()) == pnum)
+        {
+            cout << "The project name is :" << ((Project *)bo)->GetProjectName() << endl;
+
+            for (BaseObject *bo : workOnData->GetAllData())
+            {
+                if ((((WorkOn *)bo)->GetPNO()) == pnum)
+                {
+                    sumtime += ((WorkOn *)bo)->GetHours();
+                }
+            }
+        }
+    }
+    cout << "The Sum time :" << sumtime << endl;
 }
